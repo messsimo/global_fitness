@@ -14,6 +14,7 @@ html {
 body {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
+    background-color: #000C11;
 }
 
 a {
@@ -147,4 +148,56 @@ header .side-block .bottom .language img {
 
 .hero .text a:hover {
     background-color: #0184CB;
+}
+
+/* Стили для блока Преимущества клуба*/
+.benifits {
+    padding: 100px 100px 50px 100px;
+}
+
+.benifits .nav img {
+    vertical-align: middle;
+}
+
+.benifits .nav span {
+    color: #CCEDFF;
+    vertical-align: middle;
+    font-size: 16px;
+    font-weight: 300;
+    margin-left: 5px;
+}
+
+.benifits h2 {
+    font-size: 58px;
+    font-family: "Russo One", sans-serif;
+    color: white;
+}
+
+.benifits h2 b {
+    color: #34B7FE;
+}
+
+.benifits p {
+    color: #E6F6FF;
+    font-size: 18px;
+    font-weight: 300;
+    width: 650px;
+    margin: 20px 0;
+}
+
+.benifits .container .top,
+.benifits .container .bottom {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.benifits .container .top .block-top,
+.benifits .container .bottom .block-bottom {
+    margin-right: 25px;
+    margin-bottom: 25px;
+}
+
+.benifits .container .top .block-top:last-child,
+.benifits .container .bottom .block-bottom:last-child {
+    margin-right: 0;
 }
