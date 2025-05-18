@@ -102,3 +102,49 @@ header .side-block .bottom .language img {
     position: relative;
     top: 3px
 }
+
+/* Стили для блока Hero */
+.hero {
+    background-image: url("../images/hero.png");
+    background-size: cover;    
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;     
+    width: 100%;             
+}
+
+.hero .text {
+    padding: 125px 100px;
+}
+
+.hero .text h2 {
+    font-size: 61px;
+    font-family: "Russo One", sans-serif;
+    color: white;
+}
+
+.hero .text h2 b {
+    color: #34B7FE;
+}
+
+.hero .text p {
+    color: white;
+    font-size: 18px;
+    width: 700px;
+    font-weight: 300;
+    padding: 25px 0 50px 0;
+}
+
+.hero .text a {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #34B7FE;
+    padding: 13px 25px;
+    border-radius: 22px;
+    transition: 0.2s ease-in;
+}
+
+.hero .text a:hover {
+    background-color: #0184CB;
+}
