@@ -295,3 +295,30 @@ header .side-block .bottom .language img {
 .steps .container .sub-container .button a:hover {
     background-color: #0184CB;
 }
+
+
+/* Cтили для блока с услугами */
+.services {
+    padding: 50px 100px;
+    background-image: url("../images/services-bg.png");
+    background-size: cover;    
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;     
+}
+
+.services h2 {
+    color: #014265;
+    font-size: 162px;
+    text-align: center;
+}
+
+.services .container {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.services .container img {  
+    width: 280px;
+}
