@@ -201,3 +201,97 @@ header .side-block .bottom .language img {
 .benifits .container .bottom .block-bottom:last-child {
     margin-right: 0;
 }
+
+/* Стили для блока "Как это работает" */
+.steps {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 50px 100px;
+}
+
+.steps .main-img {
+    max-width: 45%;
+    padding-right: 5%;
+}
+
+.steps .container {
+    max-width: 50%;
+}
+
+.steps .container .nav img {
+    vertical-align: middle;
+}
+
+.steps .container .nav span {
+    color: #CCEDFF;
+    vertical-align: middle;
+    font-size: 16px;
+    font-weight: 300;
+    margin-left: 5px;
+}
+
+.steps .container h2 {
+    font-size: 48px;
+    font-family: "Russo One", sans-serif;
+    color: white;
+}
+
+.steps .container h2 b {
+    color: #34B7FE;
+}
+
+.steps .container p {
+    color: #E6F6FF;
+    font-size: 16px;
+    font-weight: 300;
+    width: 650px;
+    margin: 20px 0;
+}
+
+.steps .container .sub-container {
+    padding-top: 25px;
+}
+
+.steps .container .sub-container .block {
+    display: flex;
+    padding-bottom: 15px;
+}
+
+.steps .container .sub-container .block img {
+    width: 50px;
+    height: 50px;
+}
+
+.steps .container .sub-container .block .text {
+    padding-left: 15px;
+}
+
+.steps .container .sub-container .block .text .top-p {
+    color: #E6F6FF;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.steps .container .sub-container .block .text p {
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: -5px;
+}
+
+.steps .container .sub-container .button {
+    padding-top: 25px;
+}
+
+.steps .container .sub-container .button a {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #34B7FE;
+    padding: 13px 25px;
+    border-radius: 22px;
+    transition: 0.2s ease-in;
+}
+
+.steps .container .sub-container .button a:hover {
+    background-color: #0184CB;
+}
