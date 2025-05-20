@@ -188,6 +188,7 @@ header .side-block .bottom .language img {
 .benifits .container .top,
 .benifits .container .bottom {
     display: flex;
+    justify-content: center;
     flex-wrap: nowrap;
 }
 
@@ -304,7 +305,7 @@ header .side-block .bottom .language img {
     background-size: cover;    
     background-position: center;
     background-repeat: no-repeat;
-    height: 90vh;     
+    height: max-content;     
 }
 
 .services h2 {
@@ -317,7 +318,6 @@ header .side-block .bottom .language img {
     display: grid;
     place-items: center;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
 }
 
 .services .container img {  
@@ -427,4 +427,57 @@ header .side-block .bottom .language img {
     margin: 2px 0;
     max-width: 100%;
     word-wrap: break-word;
+}
+
+
+/* Cтили для блока "Галлерея" */
+.gallery {
+    padding: 50px 100px;
+}
+
+.gallery .nav img {
+    vertical-align: middle;
+}
+
+.gallery .nav span {
+    color: #CCEDFF;
+    vertical-align: middle;
+    font-size: 16px;
+    font-weight: 300;
+    margin-left: 5px;
+}
+
+.gallery h2 {
+    font-size: 58px;
+    font-family: "Russo One", sans-serif;
+    color: white;
+}
+
+.gallery h2 b {
+    color: #34B7FE;
+}
+
+.gallery p {
+    color: #E6F6FF;
+    font-size: 17px;
+    font-weight: 300;
+    width: 650px;
+    margin: 20px 0;
+}
+
+.gallery .container {
+    padding-top: 25px;
+    display: grid;
+    place-items: center;
+    grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.gallery .container .block img {
+    width: 400px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.gallery .container .block img:last-child {
+    margin-right: 0;
 }
