@@ -481,3 +481,52 @@ header .side-block .bottom .language img {
 .gallery .container .block img:last-child {
     margin-right: 0;
 }
+
+
+/* Стили для блока с отзывом */
+.review {
+    padding: 50px 100px;
+    background-image: url("../images/review-bg.png");
+    background-size: cover;    
+    background-position: center;
+    background-repeat: no-repeat;
+    height: max-content;  
+    display: grid;
+    place-items: center; 
+}
+
+.review img {
+    max-width: 140px;
+    max-height: 140px;
+}
+
+.review .text {
+    width: 540px;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.review .text h3 {
+    font-size: 32px;
+    font-family: "Russo One", sans-serif;
+    color: white;
+    padding-bottom: 15px;
+}
+
+.review .text span {
+    font-size: 14px;
+    font-weight: 300;
+    color: white;
+}
+
+.review .text .name {
+    padding-top: 15px;
+    color: #34B7FE;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.review .text p {
+    color: white;
+    font-size: 14px;
+}
