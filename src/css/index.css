@@ -672,4 +672,63 @@ header .side-block .bottom .language img {
     font-weight: bold;
 }
 
-/* Стили для блока "Почему выбирают нас" */
+
+/* Cтили для блока с местоположением (картой)  */
+.maps {
+    padding: 50px 100px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.maps .container {
+    display: block;
+    width: 45%;
+    padding-left: 5%;
+}
+
+.maps .container .nav img {
+    vertical-align: middle;
+}
+
+.maps .container .nav span {
+    color: #CCEDFF;
+    vertical-align: middle;
+    font-size: 16px;
+    font-weight: 300;
+    margin-left: 5px;
+}
+
+.maps .container h2 {
+    font-size: 42px;
+    font-family: "Russo One", sans-serif;
+    color: white;
+}
+
+.maps .container h2 b {
+    color: #34B7FE;
+}
+
+.maps .container p {
+    color: #E6F6FF;
+    font-size: 17px;
+    font-weight: 300;
+    width: 400px;
+    margin: 20px 0;
+    padding-top: 20px;
+}
+
+.maps .container .info {
+    padding-top: 20px;
+}
+
+.maps .container .info span {
+    display: block;
+    color: white;
+    font-size: 17px;
+    font-weight: 300;
+    padding-bottom: 15px;
+}
+
+.maps .container .info span:last-child {
+    padding-bottom: 0;
+}
