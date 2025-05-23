@@ -732,3 +732,119 @@ header .side-block .bottom .language img {
 .maps .container .info span:last-child {
     padding-bottom: 0;
 }
+
+/* Стили для формы обратной связи */
+.consultation {
+    padding: 50px 100px;
+    background-image: url("../images/form-bg.png");
+    background-size: cover;    
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.consultation .nav {
+    text-align: center;
+    display: grid;
+    place-items: center;
+    padding-bottom: 25px;
+    padding-top: 20px;
+}
+
+.consultation .nav span {
+    color: #CCEDFF;
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 4px;
+}
+
+.consultation .nav img {
+    width: 60px;
+    height: 2px;
+}
+
+.consultation h2 {
+    font-size: 42px;
+    font-family: "Russo One", sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.consultation h2 b {
+    color: #34B7FE;
+}
+
+.consultation p {
+    color: #E6F6FF;
+    font-size: 17px;
+    font-weight: 300;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.consultation .form {
+    display: grid;
+    place-items: center;
+    padding-bottom: 20px;
+    margin-top: -25px;
+}
+
+.consultation form {
+    display: flex;
+    flex-direction: column;
+    padding-top: 25px;
+}
+
+.consultation form label {
+    color: white;
+    font-size: 16px;
+    padding-bottom: 5px;
+    padding-top: 25px;
+}
+
+.consultation form input {
+    width: 350px;
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 10px;
+    font-size: 14px;
+    outline: none;
+    /* margin-bottom: 25px; */
+    color: white;
+    transition: 0.2s ease-in-out;
+}
+
+.consultation form input:focus {
+    border: 1px solid #34B7FE;
+    color: #34B7FE;
+}
+
+.consultation form .button {
+    text-align: center;
+    padding-top: 15px;
+}
+
+.consultation form button {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #34B7FE;
+    border-radius: 22px;
+    transition: 0.2s ease-in;
+    border: none;
+    padding: 10px 45px;
+}
+
+.consultation form button:hover {
+    background-color: #0184CB;
+}
+
+.consultation form .alert {
+    font-size: 12px;
+    font-weight: 200;
+    color: red;
+    margin-top: 5px;
+}
+
+.consultation form .alert.success {
+    color: greenyellow;
+}

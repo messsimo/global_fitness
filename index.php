@@ -10,6 +10,11 @@
 </head>
 
 <body>
+    <?php
+    // Запуск сессии
+    session_start();
+    ?>
+
     <!-- Шапка сайта-->
     <header>
         <img class="logo" src="src/images/logo.png" alt="Global Fitness">
@@ -148,7 +153,8 @@
         </div>
 
         <h2>Наши <b>тренера</b></h2>
-        <p>В Global Fitness работают сертифицированные специалисты, которые помогут достичь цели безопасно и эффективно. Мы подберём тренера под ваш уровень, характер и задачи.</p>
+        <p>В Global Fitness работают сертифицированные специалисты, которые помогут достичь цели безопасно и эффективно.
+            Мы подберём тренера под ваш уровень, характер и задачи.</p>
 
         <div class="arrows">
             <img src="src/images/arr-lt.png" id="arrow-left">
@@ -211,7 +217,8 @@
         </div>
 
         <h2>Загляни внутрь <b>Global Fitness</b></h2>
-        <p>Посмотри, где проходит твой путь к результату — просторные залы, современное оборудование и уют в каждой зоне.</p>
+        <p>Посмотри, где проходит твой путь к результату — просторные залы, современное оборудование и уют в каждой
+            зоне.</p>
 
         <div class="container">
             <div class="block">
@@ -239,7 +246,9 @@
         <img src="src/images/review.png" alt="Иван Янаки">
         <div class="text">
             <h3>“Раньше не было энергии — теперь летаю!”</h3>
-            <span>До тренировок в клубе чувствовал себя вялым и уставшим, даже после выходных. Уже через пару недель занятий заметил, как прибавилось сил и улучшилось настроение. Тренеры — настоящие профи, атмосфера заряжает! Теперь спорт — моя лучшая привычка.</span>
+            <span>До тренировок в клубе чувствовал себя вялым и уставшим, даже после выходных. Уже через пару недель
+                занятий заметил, как прибавилось сил и улучшилось настроение. Тренеры — настоящие профи, атмосфера
+                заряжает! Теперь спорт — моя лучшая привычка.</span>
             <p class="name">Иван Янаки</p>
             <p>21.01.2025</p>
         </div>
@@ -267,7 +276,7 @@
                     <img src="src/images/hot.png" alt="HOT">
                 </div>
 
-             <h5 class="first-h5">12 МЕСЯЦЕВ</h5>
+                <h5 class="first-h5">12 МЕСЯЦЕВ</h5>
                 <h5>DAY CARD</h5>
 
                 <div class="line">
@@ -353,7 +362,7 @@
             </div>
 
             <!-- Абонементы #2 -->
-             <div class="block">
+            <div class="block">
                 <h5 class="first-h5">АБОНЕМЕНТ</h5>
                 <h5>ВЫХОДНОГО ДНЯ</h5>
 
@@ -433,7 +442,7 @@
             </div>
 
             <!-- Абонементы #3 -->
-             <div class="block">
+            <div class="block">
                 <h5 class="first-h5">ЙОГА / ПИЛАТЕС</h5>
                 <h5>ГРУПП. ТРЕН.</h5>
 
@@ -522,14 +531,15 @@
 
         <div class="container">
             <div class="nav">
-            <img src="src/images/nav-line.png">
-            <span>Забота и результат</span>
-        </div>
+                <img src="src/images/nav-line.png">
+                <span>Забота и результат</span>
+            </div>
 
-        <h2><b>Почему</b> выбирают нас</h2>
-        <p>У нас важен каждый клиент — от первого шага до достижения цели. Мы объединяем тренировки, питание и поддержку в единую систему, чтобы результат был стабильным и вдохновляющим.</p>
+            <h2><b>Почему</b> выбирают нас</h2>
+            <p>У нас важен каждый клиент — от первого шага до достижения цели. Мы объединяем тренировки, питание и
+                поддержку в единую систему, чтобы результат был стабильным и вдохновляющим.</p>
 
-        <div class="sub-container">
+            <div class="sub-container">
                 <div class="block">
                     <img src="src/images/human-ch.png">
                     <div class="text">
@@ -581,11 +591,86 @@
             </div>
         </div>
 
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1063.886085475106!2d28.887126810302753!3d47.056692784767314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97cc1fd6e0e81%3A0x542fe265fdaa3a26!2sGlobal%20Fitness%20Club!5e1!3m2!1sru!2s!4v1747913759312!5m2!1sru!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1063.886085475106!2d28.887126810302753!3d47.056692784767314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97cc1fd6e0e81%3A0x542fe265fdaa3a26!2sGlobal%20Fitness%20Club!5e1!3m2!1sru!2s!4v1747913759312!5m2!1sru!2s"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- Форма обратной связи -->
+    <div class="consultation">
+        <div class="nav">
+            <span>ГОТОВ НАЧАТЬ?</span>
+            <img src="src/images/nav-line.png">
+        </div>
+
+        <h2>Получи <b>бесплатную</b></h2>
+        <h2>консультацию!</h2>
+        <p>Без спама. Мы свяжемся с вами в течение 15 минут.</p>
+
+        <?php
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $name = trim($_POST["name"]);
+            $phone = trim($_POST["phone"]);
+
+            $hasError = false;
+
+            if (empty($name)) {
+                $_SESSION["error-name"] = "Это обязательное поле";
+                $hasError = true;
+            } else if (strlen($name) < 2) {
+                $_SESSION["error-name"] = "Имя слишком короткое";
+                $hasError = true;
+            }
+
+            if (empty($phone)) {
+                $_SESSION["error-phone"] = "Это обязательное поле";
+                $hasError = true;
+            } else if (strlen($phone) < 9 && strlen(($phone) > 9)) {
+                $_SESSION["error-phone"] = "Некорректный номер телефона";
+                $hasError = true;
+            }
+
+            if (!$hasError) {
+                $_SESSION["success"] = "Спасибо за заявку! Мы скоро с вами свяжемся";
+                // можно обработать данные (например, сохранить или отправить email)
+            }
+        }
+        ?>
+
+
+        <div class="form">
+            <form action="" method="POST">
+                <label>Имя*</label>
+                <input type="text" placeholder="Имя" name="name">
+                <?php if (isset($_SESSION["error-name"])) { ?>
+                    <div class="alert"><span><?= $_SESSION["error-name"] ?></span></div>
+                    <?php unset($_SESSION["error-name"]); ?>
+                <?php } ?>
+
+                <label>Телефон*</label>
+                <input type="text" placeholder="Телефон" name="phone">
+                <?php if (isset($_SESSION["error-phone"])) { ?>
+                    <div class="alert"><span><?= $_SESSION["error-phone"] ?></span></div>
+                    <?php unset($_SESSION["error-phone"]); ?>
+                <?php } ?>
+
+                <?php if (isset($_SESSION["success"])) { ?>
+                    <div class="alert success"><span><?= $_SESSION["success"] ?></span></div>
+                    <?php unset($_SESSION["success"]); ?>
+                <?php } ?>
+
+                <div class="button">
+                    <button type="submit">Отправить</button>
+                </div>
+            </form>
+        </div>
     </div>
 
     <!-- Подключение JS -->
     <script src="src/js/slider_team.js"></script>
-        <script src="src/js/slider_prices.js"></script>
+    <script src="src/js/slider_prices.js"></script>
 </body>
+
 </html>
