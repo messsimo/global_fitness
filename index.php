@@ -668,6 +668,69 @@
         </div>
     </div>
 
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="block block-1">
+                <img class="logo" src="src/images/logo.png" alt="Global Fitness">
+                <p>Global Fitness — тренировки c комфортом и результатом.</p>
+
+                <div class="socials">
+                    <a href="https://www.instagram.com/global.fitness.md/"><img src="src/images/instagram.png" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/global.fitness.md/?locale=ru_RU"><img src="src/images/facebook.png" alt="Facebook"></a>
+                </div>
+            </div>
+
+            <div class="block block-2">
+                <a href="#">О клубе</a>
+                <a href="#">Тренеры</a>
+                <a href="#">Отзывы</a>
+                <a href="#">Абонементы</a>
+            </div>
+
+            <div class="block block-3">
+                <div class="sub-block">
+                    <img src="src/images/phone.png">
+                    <span>+373 788 555 88</span>
+                </div>
+                <div class="sub-block">
+                    <img src="src/images/phone.png">
+                    <span>0 (22) 622-258</span>
+                </div>
+                <div class="sub-block">
+                    <img src="src/images/adress-point.png">
+                    <span>str. Mircea cel Bătrân 39, Chișinău</span>
+                </div>
+                <div class="sub-block">
+                    <img src="src/images/mail.png">
+                    <span>info@globalfitness.md</span>
+                </div>
+            </div>
+
+            <div class="block block-3">
+                <div class="sub-block">
+                    <img src="src/images/clock.png">
+                    <span>Пн-Пт: 08:00 – 22:00</span>
+                </div>
+                <div class="sub-block">
+                    <img src="src/images/clock.png">
+                    <span>Суббота: 08:00 – 18:00</span>
+                </div>
+                <div class="sub-block">
+                    <img src="src/images/clock.png">
+                    <span>Воскресенье: 09:00 – 15:00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="second-container">
+            <span>© Global Fitness, All Rights Reverved, <a href="https://www.instagram.com/agency.omnify/">Designed & Developed by Omnify Agency</a></span>
+            <a href="">Правила поведения в клубе</a>
+        </div>
+    </footer>
+
     <!-- Подключение JS -->
     <script src="src/js/slider_team.js"></script>
     <script src="src/js/slider_prices.js"></script>
