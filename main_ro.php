@@ -32,19 +32,61 @@
             </div>
 
             <div class="bottom">
-                <a href="#about">Despre club</a>
-                <a href="#staff">Antrenori</a>
-                <a href="#reviews">Recenzii</a>
-                <a href="#prices">Abonamente</a>
-                <a href="#contacts">Contacte</a>
+                <div class="links">
+                    <a href="#about">Despre club</a>
+                    <a href="#staff">Antrenori</a>
+                    <a href="#reviews">Recenzii</a>
+                    <a href="#prices">Abonamente</a>
+                    <a href="#contacts">Contacte</a>
+                </div>
                 <div class="language">
                     <a href="main_ro.php" class="active">RO</a>
                     <img src="src/images/bar.png">
                     <a href="index.php">RU</a>
                 </div>
+
+                <div class="burger">
+                    <img class="open-btn" src="src/images/burger.png">
+                    <img class="close-btn" src="src/images/close.png">
+                </div>
             </div>
         </div>
     </header>
+
+    <!-- Выпадающий список бургер меню -->
+    <div class="dropdown-burger">
+        <div class="line"></div>
+        <div class="links">
+            <a href="#about">Despre club</a>
+            <a href="#staff">Antrenori</a>
+            <a href="#reviews">Recenzii</a>
+            <a href="#prices">Abonamente</a>
+            <a href="#contacts">Contacte</a>
+        </div>
+
+        <div class="info">
+            <div class="sub-block">
+                <img src="src/images/adress-point.png">
+                <span>str. Mircea cel Bătrân 39, Chișinău</span>
+            </div>
+            <div class="sub-block">
+                <img src="src/images/phone.png">
+                <span>+373 788 555 88</span>
+            </div>
+            <div class="sub-block">
+                <img src="src/images/clock.png">
+                <span>Luni–Vineri: 08:00 – 22:00</span>
+            </div>
+            <div class="sub-block">
+                <img src="src/images/clock.png">
+                <span>Sâmbătă: 08:00 – 18:00</span>
+            </div>
+            <div class="sub-block">
+                <img src="src/images/clock.png">
+                <span>Duminică: 09:00 – 15:00</span>
+            </div>
+        </div>
+    </div>
 
     <!-- Блок Hero -->
     <div class="hero">
@@ -544,7 +586,8 @@
             </div>
 
             <h2><b>De ce</b> ne aleg clientii</h2>
-            <p>La noi fiecare client contează – din prima clipă până la atingerea obiectivului. Combinăm antrenamente, nutriție și suport într-un sistem unic pentru rezultate stabile și motivante.</p>
+            <p>La noi fiecare client contează – din prima clipă până la atingerea obiectivului. Combinăm antrenamente,
+                nutriție și suport într-un sistem unic pentru rezultate stabile și motivante.</p>
 
             <div class="sub-container">
                 <div class="block">
@@ -691,10 +734,10 @@
             </div>
 
             <div class="block block-2">
-                <a href="#">Despre club</a>
-                <a href="#">Antrenori</a>
-                <a href="#">Recenzii</a>
-                <a href="#">Abonamente</a>
+                <a href="#about">Despre club</a>
+                <a href="#staff">Antrenori</a>
+                <a href="#reviews">Recenzii</a>
+                <a href="#prices">Abonamente</a>
             </div>
 
             <div class="block block-3">
@@ -735,7 +778,8 @@
         <div class="line"></div>
 
         <div class="second-container">
-            <span>© Global Fitness, All Rights Reverved, <a href="https://www.instagram.com/agency.omnify/">Designed & Developed by Omnify Agency</a></span>
+            <span>© Global Fitness, All Rights Reverved, <a href="https://www.instagram.com/agency.omnify/">Designed &
+                    Developed by Omnify Agency</a></span>
             <a href="">Regulamentul intern al clubuluiе</a>
         </div>
     </footer>
@@ -743,6 +787,7 @@
     <!-- Подключение JS -->
     <script src="src/js/slider_team.js"></script>
     <script src="src/js/slider_prices.js"></script>
+    <script src="src/js/burger.js"></script>
 </body>
 
 </html>

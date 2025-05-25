@@ -32,19 +32,61 @@
             </div>
 
             <div class="bottom">
-                <a href="#about">О клубе</a>
-                <a href="#staff">Тренеры</a>
-                <a href="#reviews">Отзывы</a>
-                <a href="#prices">Абонементы</a>
-                <a href="#contacts">Контакты</a>
+                <div class="links">
+                    <a href="#about">О клубе</a>
+                    <a href="#staff">Тренеры</a>
+                    <a href="#reviews">Отзывы</a>
+                    <a href="#prices">Абонементы</a>
+                    <a href="#contacts">Контакты</a>
+                </div>
                 <div class="language">
                     <a href="main_ro.php">RO</a>
                     <img src="src/images/bar.png">
                     <a href="index.php" class="active">RU</a>
                 </div>
+
+                <div class="burger">
+                    <img class="open-btn" src="src/images/burger.png">
+                    <img class="close-btn" src="src/images/close.png">
+                </div>
             </div>
         </div>
     </header>
+
+    <!-- Выпадающий список бургер меню -->
+    <div class="dropdown-burger">
+        <div class="line"></div>
+        <div class="links">
+            <a href="#about">О клубе</a>
+            <a href="#staff">Тренеры</a>
+            <a href="#reviews">Отзывы</a>
+            <a href="#prices">Абонементы</a>
+            <a href="#contacts">Контакты</a>
+        </div>
+
+        <div class="info">
+            <div class="sub-block">
+                <img src="src/images/adress-point.png">
+                <span>str. Mircea cel Bătrân 39, Chișinău</span>
+            </div>
+            <div class="sub-block">
+                <img src="src/images/phone.png">
+                <span>+373 788 555 88</span>
+            </div>
+            <div class="sub-block">
+                <img src="src/images/clock.png">
+                <span>Пн-Пт: 08:00 – 22:00</span>
+            </div>
+            <div class="sub-block">
+                <img src="src/images/clock.png">
+                <span>Суббота: 08:00 – 18:00</span>
+            </div>
+            <div class="sub-block">
+                <img src="src/images/clock.png">
+                <span>Воскресенье: 09:00 – 15:00</span>
+            </div>
+        </div>
+    </div>
 
     <!-- Блок Hero -->
     <div class="hero">
@@ -676,8 +718,10 @@
                 <p>Global Fitness — тренировки c комфортом и результатом.</p>
 
                 <div class="socials">
-                    <a href="https://www.instagram.com/global.fitness.md/"><img src="src/images/instagram.png" alt="Instagram"></a>
-                    <a href="https://www.facebook.com/global.fitness.md/?locale=ru_RU"><img src="src/images/facebook.png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/global.fitness.md/"><img src="src/images/instagram.png"
+                            alt="Instagram"></a>
+                    <a href="https://www.facebook.com/global.fitness.md/?locale=ru_RU"><img
+                            src="src/images/facebook.png" alt="Facebook"></a>
                 </div>
             </div>
 
@@ -726,7 +770,8 @@
         <div class="line"></div>
 
         <div class="second-container">
-            <span>© Global Fitness, All Rights Reverved, <a href="https://www.instagram.com/agency.omnify/">Designed & Developed by Omnify Agency</a></span>
+            <span>© Global Fitness, All Rights Reverved, <a href="https://www.instagram.com/agency.omnify/">Designed &
+                    Developed by Omnify Agency</a></span>
             <a href="">Правила поведения в клубе</a>
         </div>
     </footer>
@@ -734,5 +779,6 @@
     <!-- Подключение JS -->
     <script src="src/js/slider_team.js"></script>
     <script src="src/js/slider_prices.js"></script>
+    <script src="src/js/burger.js"></script>
 </body>
 </html>

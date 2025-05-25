@@ -104,6 +104,89 @@ header .side-block .bottom .language img {
     top: 3px
 }
 
+header .side-block .bottom .links {
+    margin-right: 10px;
+}
+
+/* Стили для бургер меню */
+header .side-block .bottom .burger {
+    margin-top: -4px;
+    margin-left: 15px;
+}
+
+header .side-block .bottom .burger .open-btn {
+    display: block;
+}
+
+header .side-block .bottom .burger .close-btn {
+    display: none;
+}
+
+.dropdown-burger {
+    display: block;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    height: 90vh;
+    padding-left: 50px;
+    background-color: #000C11;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 999;   
+}
+
+.dropdown-burger.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.dropdown-burger .line {
+    background-color: gray;
+    height: 2px;
+    width: 90%;
+}
+
+.dropdown-burger .links {
+    display: flex;
+    flex-direction: column;
+    padding-top: 25px;
+}
+
+.dropdown-burger .links a {
+    font-size: 16px;
+    color: white;
+    border-bottom: 1px solid #014265;
+    width: 90%;
+    padding: 15px 0;
+    transition: 0.3s ease-in;
+}
+
+.dropdown-burger .links a:hover {
+    color: #014265;
+}
+
+.dropdown-burger .info {
+    margin-top: 50px;
+}
+
+.dropdown-burger .info .sub-block {
+    margin-bottom: 20px;
+}
+
+.dropdown-burger .info .sub-block img {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.dropdown-burger .info .sub-block span {
+    color: white;
+    font-size: 14px;
+}
+
 /* Стили для блока Hero */
 .hero {
     background-image: url("../images/hero.png");
