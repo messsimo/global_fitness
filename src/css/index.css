@@ -474,8 +474,12 @@ header .side-block .bottom .language img {
 
 .gallery .container .block img {
     width: 400px;
+    height: 325px;
     margin-right: 15px;
     margin-bottom: 15px;
+    background-size: cover;    
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .gallery .container .block img:last-child {

@@ -222,8 +222,8 @@
 
         <div class="container">
             <div class="block">
-                <img src="src/images/gal-1.png">
                 <img src="src/images/gal-2.png">
+                <img src="src/images/gal-1.png">
                 <img src="src/images/gal-3.png">
             </div>
 
@@ -234,9 +234,9 @@
             </div>
 
             <div class="block">
-                <img src="src/images/gal-11.png">
-                <img src="src/images/gal-12.png">
-                <img src="src/images/gal-13.png">
+                <img src="src/images/gal-7.png">
+                <img src="src/images/gal-8.png">
+                <img src="src/images/gal-9.png">
             </div>
         </div>
     </div>
