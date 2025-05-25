@@ -953,3 +953,8 @@ footer .second-container a {
     font-weight: 300;
     text-decoration: underline;
 }
+
+/* Лингвисткие стили */
+.services .h2-ro-services {
+    font-size: 114px;
+}

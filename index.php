@@ -32,15 +32,15 @@
             </div>
 
             <div class="bottom">
-                <a href="#">О клубе</a>
-                <a href="#">Тренеры</a>
-                <a href="#">Отзывы</a>
-                <a href="#">Абонементы</a>
-                <a href="#">Контакты</a>
+                <a href="#about">О клубе</a>
+                <a href="#staff">Тренеры</a>
+                <a href="#reviews">Отзывы</a>
+                <a href="#prices">Абонементы</a>
+                <a href="#contacts">Контакты</a>
                 <div class="language">
-                    <a href="#">RO</a>
+                    <a href="main_ro.php">RO</a>
                     <img src="src/images/bar.png">
-                    <a href="#" class="active">RU</a>
+                    <a href="index.php" class="active">RU</a>
                 </div>
             </div>
         </div>
@@ -52,12 +52,12 @@
             <h2>Стань лучшей версией</h2>
             <h2>себя с <b>Global Fitness!</b></h2>
             <p>Современный фитнес-клуб в центре Кишинёва с профессиональными тренерами и индивидуальным подходом!</p>
-            <a href="#">Бесплатная консультация</a>
+            <a href="#form">Бесплатная консультация</a>
         </div>
     </div>
 
     <!-- Блок Преимущества клуба -->
-    <div class="benifits">
+    <div class="benifits" id="about">
         <div class="nav">
             <img src="src/images/nav-line.png">
             <span>O НАС</span>
@@ -127,7 +127,7 @@
                 </div>
 
                 <div class="button">
-                    <a href="#">Бесплатная консультация</a>
+                    <a href="#form">Бесплатная консультация</a>
                 </div>
             </div>
         </div>
@@ -146,7 +146,7 @@
     </div>
 
     <!-- Блок с тренерами -->
-    <div class="team">
+    <div class="team" id="staff">
         <div class="nav">
             <img src="src/images/nav-line.png">
             <span>Твоя опора</span>
@@ -242,7 +242,7 @@
     </div>
 
     <!-- Блок с отзывом -->
-    <div class="review">
+    <div class="review" id="reviews">
         <img src="src/images/review.png" alt="Иван Янаки">
         <div class="text">
             <h3>“Раньше не было энергии — теперь летаю!”</h3>
@@ -255,7 +255,7 @@
     </div>
 
     <!-- Блок с абонементами -->
-    <div class="prices">
+    <div class="prices" id="prices">
         <div class="nav">
             <img src="src/images/nav-line.png">
             <span>АБОНЕМЕНТЫ</span>
@@ -570,7 +570,7 @@
     </div>
 
     <!-- Блок с местоположением (картой) -->
-    <div class="maps">
+    <div class="maps" id="contacts">
         <div class="container">
             <div class="nav">
                 <img src="src/images/nav-line.png">
@@ -598,7 +598,7 @@
     </div>
 
     <!-- Форма обратной связи -->
-    <div class="consultation">
+    <div class="consultation" id="form">
         <div class="nav">
             <span>ГОТОВ НАЧАТЬ?</span>
             <img src="src/images/nav-line.png">
@@ -735,5 +735,4 @@
     <script src="src/js/slider_team.js"></script>
     <script src="src/js/slider_prices.js"></script>
 </body>
-
 </html>
