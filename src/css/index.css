@@ -360,12 +360,12 @@ header .side-block .bottom .burger .close-btn {
 }
 
 .steps .main-img {
-    max-width: 45%;
+    width: 45%;
     padding-right: 5%;
 }
 
 .steps .container {
-    max-width: 50%;
+    width: 50%;
 }
 
 .steps .container .nav img {
@@ -394,7 +394,7 @@ header .side-block .bottom .burger .close-btn {
     color: #E6F6FF;
     font-size: 16px;
     font-weight: 300;
-    width: 650px;
+    max-width: 650px;
     margin: 20px 0;
 }
 

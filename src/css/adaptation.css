@@ -233,3 +233,85 @@
         padding: 75px 15px 50px 15px;
     }
 }
+
+/* Адаптация для блока "Как это работает" */
+@media (max-width: 1120px) {
+    .steps {
+        padding: 50px 50px;
+    }
+}
+
+@media (max-width: 980px) {
+    .steps {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .steps .main-img {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .steps .container {
+        width: 100%;
+        padding-top: 25px;
+    }
+}
+
+@media (max-width: 760px) {
+    .steps {
+        padding: 50px 25px;
+    }
+}
+
+@media (max-width: 620px) {
+    .steps {
+        padding: 25px 25px 75px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .steps .container .nav span {
+        font-size: 14px;
+    }
+
+    .steps .container h2 {
+        font-size: 32px;
+    }
+
+    .steps .container p {
+        font-size: 12px;
+        max-width: 350px;
+    }
+
+    .steps .container .sub-container .block .text .top-p {
+        font-size: 16px;
+    }
+
+    .steps .container .sub-container .block .text p {
+        font-size: 12px;
+        margin-top: -10px;
+    }
+
+    .steps .container .sub-container .block img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .steps .container .sub-container .button a {
+        font-size: 14px;
+        padding: 13px 20px;
+    }
+
+    .steps .container .sub-container .button {
+        padding-top: 15px;
+    }
+}
+
+@media (max-width: 420px) {
+    .steps {
+        padding: 25px 15px 75px 15px;
+    }
+}
