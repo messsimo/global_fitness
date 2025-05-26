@@ -518,3 +518,56 @@
         height: 276px;
     }
 }
+
+/* Адаптация для блока с отзывами */
+@media (max-width: 1120px) {
+    .review {
+        padding: 50px 50px;
+    }
+}
+
+@media (max-width: 760px) {
+    .review {
+        padding: 50px 25px;
+    }
+}
+
+@media (max-width: 640px) {
+    .review .text h3 {
+        font-size: 22px;
+    }
+
+    .review .text span {
+        font-size: 10px;
+    }
+
+    .review .text .name {
+        font-size: 18px;
+    }
+
+    .review .text p {
+        margin-top: 5px;
+        font-size: 12px;
+    }
+
+    .review img {
+        max-width: 120px;
+        max-height: 120px;
+    }
+
+    .review .text {
+        width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .review .text {
+        width: 300px;
+    } 
+}
+
+@media (max-width: 420px) {
+    .review {
+        padding: 50px 15px;
+    }
+}
