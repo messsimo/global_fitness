@@ -29,7 +29,8 @@ button {
     font-weight: 400;
 }
 
-img, svg {
+img,
+svg {
     max-width: 100%;
 }
 
@@ -57,7 +58,7 @@ header .side-block .top .block {
     display: flex;
 }
 
-header .side-block .top .block span { 
+header .side-block .top .block span {
     color: white;
     font-size: 16px;
     font-weight: 400;
@@ -135,7 +136,7 @@ header .side-block .bottom .burger .close-btn {
     pointer-events: none;
     transform: translateY(-20px);
     transition: opacity 0.3s ease, transform 0.3s ease;
-    z-index: 999;   
+    z-index: 999;
 }
 
 .dropdown-burger.active {
@@ -190,11 +191,11 @@ header .side-block .bottom .burger .close-btn {
 /* Стили для блока Hero */
 .hero {
     background-image: url("../images/hero.png");
-    background-size: cover;    
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 90vh;     
-    width: 100%;             
+    height: 90vh;
+    width: 100%;
 }
 
 .hero .text {
@@ -268,22 +269,87 @@ header .side-block .bottom .burger .close-btn {
     margin: 20px 0;
 }
 
-.benifits .container .top,
+.benifits .container .top {
+    display: flex;
+    justify-content: center;
+}
+
+.benifits .container .top .block-1,
+.benifits .container .top .block-2,
+.benifits .container .top .block-3,
+.benifits .container .bottom .block-4,
+.benifits .container .bottom .block-5 {
+    width: 33%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 25px;
+}
+
+.benifits .container .top .block-1:last-child,
+.benifits .container .top .block-2:last-child,
+.benifits .container .top .block-3:last-child,
+.benifits .container .bottom .block-4:last-child,
+.benifits .container .bottom .block-5:last-child {
+    margin-right: 0;
+}
+
+.benifits .container .top .block-1 img,
+.benifits .container .top .block-2 img,
+.benifits .container .top .block-3 img,
+.benifits .container .bottom .block-4 img,
+.benifits .container .bottom .block-5 img {
+    width: 50px;
+    height: 45px;
+}
+
+.benifits .container .top .block-1 span,
+.benifits .container .top .block-2 span,
+.benifits .container .top .block-3 span,
+.benifits .container .bottom .block-4 span,
+.benifits .container .bottom .block-5 span {
+    text-align: center;
+    width: 250px;
+    margin-top: 15px;
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.benifits .container .top .block-1.active span {
+    color: #34B7FE;
+}
+
 .benifits .container .bottom {
     display: flex;
     justify-content: center;
-    flex-wrap: nowrap;
+    margin-top: 25px;
 }
 
-.benifits .container .top .block-top,
-.benifits .container .bottom .block-bottom {
-    margin-right: 25px;
-    margin-bottom: 25px;
+.benifits .container .bottom .block-4,
+.benifits .container .bottom .block-5 {
+    width: 50%;
 }
 
-.benifits .container .top .block-top:last-child,
-.benifits .container .bottom .block-bottom:last-child {
-    margin-right: 0;
+.benifits .container .top .block-1 {
+    background-image: url("../images/ben-1.png");
+}
+.benifits .container .top .block-2 {
+    background-image: url("../images/ben-2.png");
+}
+.benifits .container .top .block-3 {
+    background-image: url("../images/ben-3.png");
+}
+.benifits .container .bottom .block-4 {
+    background-image: url("../images/ben-4.png");
+}
+.benifits .container .bottom .block-5 {
+    background-image: url("../images/ben-5.png");
 }
 
 /* Стили для блока "Как это работает" */
@@ -385,10 +451,10 @@ header .side-block .bottom .burger .close-btn {
 .services {
     padding: 25px 100px 50px 100px;
     background-image: url("../images/services-bg.png");
-    background-size: cover;    
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: max-content;     
+    height: max-content;
 }
 
 .services h2 {
@@ -403,7 +469,7 @@ header .side-block .bottom .burger .close-btn {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-.services .container img {  
+.services .container img {
     width: 280px;
 }
 
@@ -460,7 +526,7 @@ header .side-block .bottom .burger .close-btn {
 }
 
 .team .container::-webkit-scrollbar {
-    display: none; 
+    display: none;
 }
 
 .team .block {
@@ -560,7 +626,7 @@ header .side-block .bottom .burger .close-btn {
     height: 325px;
     margin-right: 15px;
     margin-bottom: 15px;
-    background-size: cover;    
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -574,12 +640,12 @@ header .side-block .bottom .burger .close-btn {
 .review {
     padding: 50px 100px;
     background-image: url("../images/review-bg.png");
-    background-size: cover;    
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: max-content;  
+    height: max-content;
     display: grid;
-    place-items: center; 
+    place-items: center;
 }
 
 .review img {
@@ -670,7 +736,7 @@ header .side-block .bottom .burger .close-btn {
 }
 
 .prices .container::-webkit-scrollbar {
-    display: none; 
+    display: none;
 }
 
 .prices .block {
@@ -706,7 +772,7 @@ header .side-block .bottom .burger .close-btn {
     display: flex;
     justify-content: center;
     padding: 4px 0;
-        margin-top: 25px;
+    margin-top: 25px;
 }
 
 .prices .block.hot .line {
@@ -824,7 +890,7 @@ header .side-block .bottom .burger .close-btn {
 .consultation {
     padding: 50px 100px;
     background-image: url("../images/form-bg.png");
-    background-size: cover;    
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }

@@ -132,3 +132,104 @@
         font-size: 10px;
     }
 }
+
+/* Адаптация для блока с преимуществами */
+@media (max-width: 1120px) {
+    .benifits {
+        padding: 100px 50px 50px 50px;
+    }
+
+    .benifits .container .top .block-1,
+    .benifits .container .top .block-2,
+    .benifits .container .top .block-3,
+    .benifits .container .bottom .block-4,
+    .benifits .container .bottom .block-5 {
+        height: 300px;
+    }
+}
+
+@media (max-width: 980px) {
+    .benifits h2 {
+        font-size: 48px;
+    }
+
+    .benifits p {
+        font-size: 16px;
+        width: 500px;
+    }
+
+    .benifits .container {
+        padding-top: 15px;
+    }
+
+    .benifits .container .top .block-1,
+    .benifits .container .top .block-2,
+    .benifits .container .top .block-3,
+    .benifits .container .bottom .block-4,
+    .benifits .container .bottom .block-5 {
+        width: 100%;
+        margin-right: 0px;
+        margin-bottom: 25px;
+    }
+
+    .benifits .container .top {
+        flex-wrap: wrap;
+    }
+
+
+    .benifits .container .bottom {
+        margin-top: 0px;
+        flex-wrap: wrap;
+    }
+
+    .benifits .container .bottom .block-4,
+    .benifits .container .bottom .block-5 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 760px) {
+    .benifits {
+        padding: 100px 25px 50px 25px;
+    }
+}
+
+@media (max-width: 620px) {
+    .benifits h2 {
+        font-size: 38px;
+    }
+
+    .benifits p {
+        font-size: 14px;
+        width: 400px;
+    }
+
+    .benifits .container .top .block-1,
+    .benifits .container .top .block-2,
+    .benifits .container .top .block-3,
+    .benifits .container .bottom .block-4,
+    .benifits .container .bottom .block-5 {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .benifits {
+        padding: 75px 25px 50px 25px;
+    }
+
+    .benifits h2 {
+        font-size: 32px;
+    }
+
+    .benifits p {
+        font-size: 12px;
+        width: 300px;
+    }
+}
+
+@media (max-width: 420px) {
+    .benifits {
+        padding: 75px 15px 50px 15px;
+    }
+}

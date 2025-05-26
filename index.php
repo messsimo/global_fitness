@@ -111,22 +111,27 @@
 
         <div class="container">
             <div class="top">
-                <div class="block-top block-1">
-                    <img src="src/images/ben-1.png" alt="Тренажёрные залы нового поколения">
-                </div>
-                <div class="block-top block-2">
-                    <img src="src/images/ben-2.png" alt="Персональные и групповые тренировки">
-                </div>
+                    <div class="block-top block-1 active">
+                        <img src="src/images/bench.png">
+                        <span>Тренажёрные залы нового поколения</span>
+                    </div>
+                    <div class="block-top block-2">
+                        <img src="src/images/blank.png">
+                        <span>Персональные и групповые тренировки</span>
+                    </div>
                 <div class="block-top block-3">
-                    <img src="src/images/ben-3.png" alt="Сертифицированные тренеры с опытом">
+                    <img src="src/images/trainer.png">
+                    <span>Сертифицированные тренеры с опытом</span>
                 </div>
             </div>
             <div class="bottom">
                 <div class="block-bottom block-4">
-                    <img src="src/images/ben-4.png" alt="Удобное расположение и гибкий график">
+                    <img src="src/images/place.png">
+                    <span>Удобное расположение и гибкий график</span>
                 </div>
                 <div class="block-bottom block-5">
-                    <img src="src/images/ben-5.png" alt="Комфортные душевые и раздевалки">
+                    <img src="src/images/shower.png">
+                    <span>Комфортные душевые и раздевалки</span>
                 </div>
             </div>
         </div>
@@ -782,4 +787,5 @@
     <script src="src/js/slider_prices.js"></script>
     <script src="src/js/burger.js"></script>
 </body>
+
 </html>

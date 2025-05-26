@@ -111,22 +111,27 @@
 
         <div class="container">
             <div class="top">
-                <div class="block-top block-1">
-                    <img src="src/images/ben-1-ro.png" alt="Săli de sport de nouă generație">
+                <div class="block-top block-1 active">
+                     <img src="src/images/bench.png">
+                     <span>Săli de sport de nouă generație</span>
                 </div>
                 <div class="block-top block-2">
-                    <img src="src/images/ben-2-ro.png" alt="Antrenamente individuale și de grup">
+                    <img src="src/images/blank.png">
+                     <span>Antrenamente individuale și de grup</span>
                 </div>
                 <div class="block-top block-3">
-                    <img src="src/images/ben-3-ro.png" alt="Antrenori certificați cu experiență">
+                    <img src="src/images/trainer.png">
+                    <span>Antrenori certificați cu experiență</span>
                 </div>
             </div>
             <div class="bottom">
                 <div class="block-bottom block-4">
-                    <img src="src/images/ben-4-ro.png" alt="Locație convenabilă și program flexibil">
+                    <img src="src/images/place.png">
+                    <span>Locație convenabilă și program flexibil</span>
                 </div>
                 <div class="block-bottom block-5">
-                    <img src="src/images/ben-5-ro.png" alt="Dușuri și vestiare confortabile">
+                    <img src="src/images/shower.png">
+                    <span>Dușuri și vestiare confortabile</span>
                 </div>
             </div>
         </div>
