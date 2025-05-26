@@ -115,7 +115,7 @@ header .side-block .bottom .burger {
 }
 
 header .side-block .bottom .burger .open-btn {
-    display: block;
+    display: none;
 }
 
 header .side-block .bottom .burger .close-btn {
