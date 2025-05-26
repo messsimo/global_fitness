@@ -836,7 +836,7 @@ header .side-block .bottom .burger .close-btn {
 .maps .container {
     display: block;
     width: 45%;
-    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .maps .container .nav img {

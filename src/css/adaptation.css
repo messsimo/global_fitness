@@ -627,7 +627,75 @@
         padding: 50px 15px;
     }
 
-        .prices h2 {
+    .prices h2 {
         font-size: 28px;
+    }
+}
+
+
+/* Адаптация для блока с контактами */
+@media (max-width: 1120px) {
+    .maps {
+        padding: 50px 50px;
+    }
+}
+
+@media (max-width: 980px) {
+    .maps {
+        flex-wrap: wrap;
+    }
+
+    .maps .container {
+        width: 100%;
+        padding-right: 0%;
+        padding-top: 25px;
+    }
+
+    .maps iframe {
+        width: 100%;
+        order: -1;
+    }
+}
+
+@media (max-width: 760px) {
+    .maps {
+        padding: 50px 25px;
+    }
+}
+
+@media (max-width: 620px) {
+    .maps .container h2 {
+        font-size: 38px;
+    }
+
+    .maps .container p {
+        font-size: 15px;
+        padding-top: 10px;
+    }
+
+    .maps .container .info span {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .maps .container h2 {
+        font-size: 32px;
+    }
+
+    .maps .container p {
+        font-size: 13px;
+        padding-top: 10px;
+        width: 320px;
+    }
+
+    .maps .container .info span {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 420px) {
+    .maps {
+        padding: 50px 15px;
     }
 }
