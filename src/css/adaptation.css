@@ -359,3 +359,59 @@
         font-size: 12vw;
     }
 }
+
+/* Адаптация для блока с тренерами */
+@media (max-width: 1120px) {
+    .team {
+        padding: 50px 50px;
+    }
+}
+
+@media (max-width: 980px) {
+    .team h2 {
+        font-size: 48px;
+    }
+
+    .team p {
+        font-size: 16px;
+        width: 500px;
+    }
+}
+
+@media (max-width: 980px) {
+    .team {
+        padding: 50px 25px;
+    }
+}
+
+@media (max-width: 620px) {
+    .team h2 {
+        font-size: 38px;
+    }
+
+    .team p {
+        font-size: 14px;
+        width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team h2 {
+        font-size: 32px;
+    }
+
+    .team p {
+        font-size: 12px;
+        width: 300px;
+    }
+
+    .team .nav span {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 420px) {
+    .team {
+        padding: 50px 15px;
+    }
+}
