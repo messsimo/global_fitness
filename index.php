@@ -112,7 +112,7 @@
         <div class="container">
             <div class="top">
                     <div class="block-top block-1 active">
-                        <img src="src/images/bench.png">
+                        <img src="src/images/bench.svg">
                         <span>Тренажёрные залы нового поколения</span>
                     </div>
                     <div class="block-top block-2">
