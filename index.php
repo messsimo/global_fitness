@@ -1,3 +1,64 @@
+<?php
+// Запуск сессии
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Экранирование от XSS
+    $name = htmlspecialchars(trim($_POST["name"]));
+    $phone = htmlspecialchars(trim($_POST["phone"]));
+
+    $hasError = false;
+
+    // Валидация имени
+    if (empty($name)) {
+        $_SESSION["error-name"] = "Это обязательное поле";
+        $hasError = true;
+    } elseif (mb_strlen($name) < 2) {
+        $_SESSION["error-name"] = "Имя слишком короткое";
+        $hasError = true;
+    }
+
+    // Валидация телефона
+    if (empty($phone)) {
+        $_SESSION["error-phone"] = "Это обязательное поле";
+        $hasError = true;
+    } elseif (!preg_match('/^\+?\d{8,20}$/', $phone)) {
+        $_SESSION["error-phone"] = "Некорректный номер телефона";
+        $hasError = true;
+    }
+
+    if (!$hasError) {
+        $to = "info@globalfitness.md";
+        $subject = "Запрос на консультацию с сайта Global Fitness";
+        $message = "
+                    <html>
+                    <head>
+                        <title>Заявка с сайта Global Fitness</title>
+                    </head>
+                    <body>
+                        <h2>Новая заявка на консультацию</h2>
+                        <p><strong>Имя:</strong> {$name}</p>
+                        <p><strong>Телефон:</strong> {$phone}</p>
+                    </body>
+                    </html>
+                    ";
+        $headers = "From: no-reply@globalfitness.md\r\n";
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+
+        if (mail($to, $subject, $message, $headers)) {
+            $_SESSION["success"] = "Спасибо за заявку! Мы скоро с вами свяжемся";
+        } else {
+            $_SESSION["error-send"] = "Ошибка при отправке письма. Попробуйте позже";
+        }
+
+        // Редирект для предотвращения повторной отправки
+        header("Location: " . $_SERVER["REQUEST_URI"]);
+        exit();
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,25 +70,19 @@
     <link rel="stylesheet" href="src/css/adaptation.css">
     <title>Global Fitness MD</title>
 </head>
-
 <body>
-    <?php
-    // Запуск сессии
-    session_start();
-    ?>
-
     <!-- Шапка сайта-->
     <header>
-        <img class="logo" src="src/images/logo.png" alt="Global Fitness">
+        <img class="logo" src="src/images/logo.svg" alt="Global Fitness">
 
         <div class="side-block">
             <div class="top">
                 <div class="block">
-                    <img src="src/images/adress-point.png">
+                    <img src="src/images/adress-point.svg">
                     <span>str. Mircea cel Bătrân 39, Chișinău</span>
                 </div>
                 <div class="block">
-                    <img src="src/images/phone.png">
+                    <img src="src/images/phone.svg">
                     <span>+373 788 555 88</span>
                 </div>
             </div>
@@ -42,13 +97,13 @@
                 </div>
                 <div class="language">
                     <a href="main_ro.php">RO</a>
-                    <img src="src/images/bar.png">
+                    <img src="src/images/bar.svg">
                     <a href="index.php" class="active">RU</a>
                 </div>
 
                 <div class="burger">
-                    <img class="open-btn" src="src/images/burger.png">
-                    <img class="close-btn" src="src/images/close.png">
+                    <img class="open-btn" src="src/images/burger.svg">
+                    <img class="close-btn" src="src/images/close.svg">
                 </div>
             </div>
         </div>
@@ -111,14 +166,14 @@
 
         <div class="container">
             <div class="top">
-                    <div class="block-top block-1 active">
-                        <img src="src/images/bench.svg">
-                        <span>Тренажёрные залы нового поколения</span>
-                    </div>
-                    <div class="block-top block-2">
-                        <img src="src/images/blank.png">
-                        <span>Персональные и групповые тренировки</span>
-                    </div>
+                <div class="block-top block-1 active">
+                    <img src="src/images/bench.svg">
+                    <span>Тренажёрные залы нового поколения</span>
+                </div>
+                <div class="block-top block-2">
+                    <img src="src/images/blank.png">
+                    <span>Персональные и групповые тренировки</span>
+                </div>
                 <div class="block-top block-3">
                     <img src="src/images/trainer.png">
                     <span>Сертифицированные тренеры с опытом</span>
@@ -611,7 +666,7 @@
                 </div>
 
                 <div class="button">
-                    <a href="#">Бесплатная консультация</a>
+                    <a href="#form">Бесплатная консультация</a>
                 </div>
             </div>
         </div>
@@ -656,38 +711,6 @@
         <h2>консультацию!</h2>
         <p>Без спама. Мы свяжемся с вами в течение 15 минут.</p>
 
-        <?php
-
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $name = trim($_POST["name"]);
-            $phone = trim($_POST["phone"]);
-
-            $hasError = false;
-
-            if (empty($name)) {
-                $_SESSION["error-name"] = "Это обязательное поле";
-                $hasError = true;
-            } else if (strlen($name) < 2) {
-                $_SESSION["error-name"] = "Имя слишком короткое";
-                $hasError = true;
-            }
-
-            if (empty($phone)) {
-                $_SESSION["error-phone"] = "Это обязательное поле";
-                $hasError = true;
-            } else if (strlen($phone) < 9 && strlen(($phone) > 9)) {
-                $_SESSION["error-phone"] = "Некорректный номер телефона";
-                $hasError = true;
-            }
-
-            if (!$hasError) {
-                $_SESSION["success"] = "Спасибо за заявку! Мы скоро с вами свяжемся";
-                // можно обработать данные (например, сохранить или отправить email)
-            }
-        }
-        ?>
-
-
         <div class="form">
             <form action="" method="POST">
                 <label>Имя*</label>
@@ -707,6 +730,11 @@
                 <?php if (isset($_SESSION["success"])) { ?>
                     <div class="alert success"><span><?= $_SESSION["success"] ?></span></div>
                     <?php unset($_SESSION["success"]); ?>
+                <?php } ?>
+
+                <?php if (isset($_SESSION["error-send"])) { ?>
+                    <div class="alert"><span><?= $_SESSION["error-send"] ?></span></div>
+                    <?php unset($_SESSION["error-send"]); ?>
                 <?php } ?>
 
                 <div class="button">
@@ -732,10 +760,10 @@
             </div>
 
             <div class="block block-2">
-                <a href="#">О клубе</a>
-                <a href="#">Тренеры</a>
-                <a href="#">Отзывы</a>
-                <a href="#">Абонементы</a>
+                <a href="#about">О клубе</a>
+                <a href="#staff">Тренеры</a>
+                <a href="#reviews">Отзывы</a>
+                <a href="#prices">Абонементы</a>
             </div>
 
             <div class="block block-3">

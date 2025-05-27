@@ -1,6 +1,66 @@
+<?php
+// Запуск сессии
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Экранирование от XSS
+    $name = htmlspecialchars(trim($_POST["name"]));
+    $phone = htmlspecialchars(trim($_POST["phone"]));
+
+    $hasError = false;
+
+    // Валидация имени
+    if (empty($name)) {
+        $_SESSION["error-name"] = "Acesta este un câmp obligatoriu";
+        $hasError = true;
+    } elseif (mb_strlen($name) < 2) {
+        $_SESSION["error-name"] = "Numele este prea scurt";
+        $hasError = true;
+    }
+
+    // Валидация телефона
+    if (empty($phone)) {
+        $_SESSION["error-phone"] = "Acesta este un câmp obligatoriu.";
+        $hasError = true;
+    } elseif (!preg_match('/^\+?\d{8,20}$/', $phone)) {
+        $_SESSION["error-phone"] = "Număr de telefon incorect";
+        $hasError = true;
+    }
+
+    if (!$hasError) {
+        $to = "info@globalfitness.md";
+        $subject = "Запрос на консультацию с сайта Global Fitness";
+        $message = "
+                    <html>
+                    <head>
+                        <title>Заявка с сайта Global Fitness</title>
+                    </head>
+                    <body>
+                        <h2>Новая заявка на консультацию</h2>
+                        <p><strong>Имя:</strong> {$name}</p>
+                        <p><strong>Телефон:</strong> {$phone}</p>
+                    </body>
+                    </html>
+                    ";
+        $headers = "From: no-reply@globalfitness.md\r\n";
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+
+        if (mail($to, $subject, $message, $headers)) {
+            $_SESSION["success"] = "Vă mulțumim pentru aplicația dumneavoastră! Vă vom contacta în curând";
+        } else {
+            $_SESSION["error-send"] = "Eroare la trimiterea e-mailului. Vă rugăm să încercați din nou mai târziu";
+        }
+
+        // Редирект для предотвращения повторной отправки
+        header("Location: " . $_SERVER["REQUEST_URI"]);
+        exit();
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +69,7 @@
     <link rel="stylesheet" href="src/css/adaptation.css">
     <title>Global Fitness MD</title>
 </head>
-
 <body>
-    <?php
-    // Запуск сессии
-    session_start();
-    ?>
-
     <!-- Шапка сайта-->
     <header>
         <img class="logo" src="src/images/logo.png" alt="Global Fitness">
@@ -663,38 +717,6 @@
         <h2>Obtine o consultantă</h2>
         <h2>gratuită!<b></b></h2>
         <p>Fără spam. Te contactăm în 15 minute.</p>
-
-        <?php
-
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $name = trim($_POST["name"]);
-            $phone = trim($_POST["phone"]);
-
-            $hasError = false;
-
-            if (empty($name)) {
-                $_SESSION["error-name"] = "Acesta este un câmp obligatoriu.";
-                $hasError = true;
-            } else if (strlen($name) < 2) {
-                $_SESSION["error-name"] = "Numele este prea scurt";
-                $hasError = true;
-            }
-
-            if (empty($phone)) {
-                $_SESSION["error-phone"] = "Acesta este un câmp obligatoriu.";
-                $hasError = true;
-            } else if (strlen($phone) < 9 && strlen(($phone) > 9)) {
-                $_SESSION["error-phone"] = "Număr de telefon incorect";
-                $hasError = true;
-            }
-
-            if (!$hasError) {
-                $_SESSION["success"] = "Vă mulțumim pentru aplicația dumneavoastră! Vă vom contacta în curând";
-                // можно обработать данные (например, сохранить или отправить email)
-            }
-        }
-        ?>
-
 
         <div class="form">
             <form action="" method="POST">

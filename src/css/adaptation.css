@@ -799,11 +799,11 @@
 
 @media (max-width: 630px) {
     footer .second-container {
-    flex-direction: column;
-    align-items: center;
-}
+        flex-direction: column;
+        align-items: center;
+    }
 
-footer .second-container span {
-    margin-bottom: 15px;
-}
+    footer .second-container span {
+        margin-bottom: 15px;
+    }
 }
