@@ -15,6 +15,7 @@ body {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     background-color: #000C11;
+    overflow-x: hidden;
 }
 
 a {
@@ -32,6 +33,18 @@ button {
 img,
 svg {
     max-width: 100%;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 /* Стили для шапки сайта */
@@ -338,15 +351,19 @@ header .side-block .bottom .burger .close-btn {
 .benifits .container .top .block-1 {
     background-image: url("../images/ben-1.png");
 }
+
 .benifits .container .top .block-2 {
     background-image: url("../images/ben-2.png");
 }
+
 .benifits .container .top .block-3 {
     background-image: url("../images/ben-3.png");
 }
+
 .benifits .container .bottom .block-4 {
     background-image: url("../images/ben-4.png");
 }
+
 .benifits .container .bottom .block-5 {
     background-image: url("../images/ben-5.png");
 }
@@ -522,6 +539,7 @@ header .side-block .bottom .burger .close-btn {
     scroll-behavior: smooth;
     gap: 25px;
     padding-top: 50px;
+    max-width: 100%;
 }
 
 .team .container::-webkit-scrollbar {
@@ -732,6 +750,7 @@ header .side-block .bottom .burger .close-btn {
     scroll-behavior: smooth;
     gap: 25px;
     padding-top: 50px;
+    max-width: 100%;
 }
 
 .prices .container::-webkit-scrollbar {

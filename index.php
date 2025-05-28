@@ -68,8 +68,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Подключение CSS -->
     <link rel="stylesheet" href="src/css/index.css">
     <link rel="stylesheet" href="src/css/adaptation.css">
-    <title>Global Fitness MD</title>
+    <title>Фитнес клуб Global Fitness в Чеканах — тренажерный зал, сауна, каратэ для детей</title>
+
+    <!-- SEO -->
+    <meta name="description"
+        content="Тренажерный зал, групповые и индивидуальные тренировки, сауна, солярий, каратэ для детей в фитнес клубе Global Fitness, Кишинёв, Чеканы.">
+    <meta name="keywords"
+        content="фитнес клуб Чеканы, тренажерный зал Кишинёв, персональные тренировки для мужчин, силовые тренировки Кишинёв, групповые тренировки для мужчин, фитнес для мужчин 25–35 лет, тренировки для набора массы, фитнес для начинающих мужчин, тренировки для набора мышечной массы, тренажерный зал для студентов, фитнес клубы в Чеканах, абонемент в спортзал Кишинёв, тренировки для мужчин 18–25 лет, фитнес для женщин Кишинёв, групповые тренировки для женщин, йога для похудения, тренировки для женщин 18–23 лет, фитнес клуб Чеканы для женщин, программы похудения Кишинёв, каратэ для детей Кишинёв, секция каратэ Чеканы, тренировки по каратэ для подростков, каратэ клубы в Кишинёве, занятия каратэ для детей 12–18 лет, каратэ для начинающих детей, сауна Кишинёв, солярий в Чеканах, массажный кабинет Кишинёв, индивидуальные тренировки Кишинёв, групповые фитнес-занятия, фитнес клуб с сауной и солярием">
+    <link rel="canonical" href="https://globalfitness.md/" />
 </head>
+
 <body>
     <!-- Шапка сайта-->
     <header>
@@ -122,23 +130,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="info">
             <div class="sub-block">
-                <img src="src/images/adress-point.png">
+                <img src="src/images/adress-point.svg">
                 <span>str. Mircea cel Bătrân 39, Chișinău</span>
             </div>
             <div class="sub-block">
-                <img src="src/images/phone.png">
+                <img src="src/images/phone.svg">
                 <span>+373 788 555 88</span>
             </div>
             <div class="sub-block">
-                <img src="src/images/clock.png">
+                <img src="src/images/clock.svg">
                 <span>Пн-Пт: 08:00 – 22:00</span>
             </div>
             <div class="sub-block">
-                <img src="src/images/clock.png">
+                <img src="src/images/clock.svg">
                 <span>Суббота: 08:00 – 18:00</span>
             </div>
             <div class="sub-block">
-                <img src="src/images/clock.png">
+                <img src="src/images/clock.svg">
                 <span>Воскресенье: 09:00 – 15:00</span>
             </div>
         </div>
@@ -146,6 +154,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!-- Блок Hero -->
     <div class="hero">
+        <h1 class="visually-hidden">Фитнес клуб Global Fitness в Чеканах — тренажерный зал, сауна, каратэ для детей</h1>
+        <h2 class="visually-hidden">О фитнес клубе Global Fitness в Чеканах</h2>
+        <h2 class="visually-hidden">Почему выбирают Global Fitness</h2>
+        <h2 class="visually-hidden">Наши преимущества и особенности</h2>
+        <h2 class="visually-hidden">Тренажерный зал для мужчин и женщин</h2>
+        <h2 class="visually-hidden">Групповые фитнес тренировки</h2>
+        <h2 class="visually-hidden">Индивидуальные тренировки с тренером</h2>
+        <h2 class="visually-hidden">Секция каратэ для детей 12–18 лет</h2>
+        <h2 class="visually-hidden">Программы похудения и коррекции веса</h2>
+        <h2 class="visually-hidden">Сауна и релакс-зона</h2>
+        <h2 class="visually-hidden">Солярий для загара</h2>
+        <h2 class="visually-hidden">Массажный кабинет и процедуры восстановления</h2>
+        <h2 class="visually-hidden">Гибкие тарифы и абонементы</h2>
+        <h2 class="visually-hidden">Специальные предложения и акции</h2>
+        <h2 class="visually-hidden">Пробная тренировка бесплатно</h2>
+        <h2 class="visually-hidden">Отзывы наших клиентов</h2>
+        <h2 class="visually-hidden">Истории успеха и трансформации</h2>
+        <h2 class="visually-hidden">Фото тренажерного зала и бассейна</h2>
+        <h2 class="visually-hidden">Видео и фото с тренировок и мероприятий</h2>
+        <h2 class="visually-hidden">Адрес фитнес клуба в Чеканах, Кишинёв</h2>
+        <h2 class="visually-hidden">Как до нас добраться</h2>
+        <h2 class="visually-hidden">График работы и запись на тренировку</h2>
+        <h2 class="visually-hidden">Вопросы о тренировках и абонементах</h2>
+        <h2 class="visually-hidden">Вопросы по безопасности и санитарным нормам</h2>
+
         <div class="text">
             <h2>Стань лучшей версией</h2>
             <h2>себя с <b>Global Fitness!</b></h2>
@@ -157,7 +190,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Блок Преимущества клуба -->
     <div class="benifits" id="about">
         <div class="nav">
-            <img src="src/images/nav-line.png">
+            <img src="src/images/nav-line.svg">
             <span>O НАС</span>
         </div>
 
@@ -171,21 +204,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <span>Тренажёрные залы нового поколения</span>
                 </div>
                 <div class="block-top block-2">
-                    <img src="src/images/blank.png">
+                    <img src="src/images/blank.svg">
                     <span>Персональные и групповые тренировки</span>
                 </div>
                 <div class="block-top block-3">
-                    <img src="src/images/trainer.png">
+                    <img src="src/images/trainer.svg">
                     <span>Сертифицированные тренеры с опытом</span>
                 </div>
             </div>
             <div class="bottom">
                 <div class="block-bottom block-4">
-                    <img src="src/images/place.png">
+                    <img src="src/images/place.svg">
                     <span>Удобное расположение и гибкий график</span>
                 </div>
                 <div class="block-bottom block-5">
-                    <img src="src/images/shower.png">
+                    <img src="src/images/shower.svg">
                     <span>Комфортные душевые и раздевалки</span>
                 </div>
             </div>
@@ -194,11 +227,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!-- Блок "Как это работает" -->
     <div class="steps">
-        <img class="main-img" src="src/images/steps.png" alt="Global Fitenss">
+        <img class="main-img" src="src/images/steps.svg" alt="Global Fitenss">
 
         <div class="container">
             <div class="nav">
-                <img src="src/images/nav-line.png">
+                <img src="src/images/nav-line.svg">
                 <span>ТВОИ ШАГИ</span>
             </div>
 
@@ -208,21 +241,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <div class="sub-container">
                 <div class="block">
-                    <img src="src/images/steps-1.png">
+                    <img src="src/images/steps-1.svg">
                     <div class="text">
                         <p class="top-p">Оставляешь заявку</p>
                         <p>Заполни короткую форму — это займёт меньше минуты.</p>
                     </div>
                 </div>
                 <div class="block">
-                    <img src="src/images/steps-2.png">
+                    <img src="src/images/steps-2.svg">
                     <div class="text">
                         <p class="top-p">Получаешь бесплатную консультацию</p>
                         <p>Мы перезвоним, уточним цели и ответим на вопросы.</p>
                     </div>
                 </div>
                 <div class="block">
-                    <img src="src/images/steps-3.png">
+                    <img src="src/images/steps-3.svg">
                     <div class="text">
                         <p class="top-p">Начинаешь тренироваться и видеть результат</p>
                         <p>Первые результаты — уже через пару недель.</p>
@@ -241,17 +274,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h2>НАШИ УСЛУГИ</h2>
 
         <div class="container">
-            <img src="src/images/ser-1.png" alt="Персональные / Групповые тренировки">
-            <img src="src/images/ser-2.png" alt="Йога / Пилатес">
-            <img src="src/images/ser-3.png" alt="Каратэ Мини / Макси">
-            <img src="src/images/ser-4.png" alt="Сауна / Солярий">
+            <img src="src/images/ser-1.svg" alt="Индивидуальная тренировка с персональным тренером в клубе Global Fitness">
+            <img src="src/images/ser-2.svg" alt="Групповое занятие по йоге и пилатесу в фитнес клубе Global Fitness, Кишинёв">
+            <img src="src/images/ser-3.svg" alt="Тренировка по каратэ для детей 12-18 лет в клубе Global Fitness">
+            <img src="src/images/ser-4.svg" alt="Сауна для релаксации в фитнес клубе Global Fitness, Чеканы">
         </div>
     </div>
 
     <!-- Блок с тренерами -->
     <div class="team" id="staff">
         <div class="nav">
-            <img src="src/images/nav-line.png">
+            <img src="src/images/nav-line.svg">
             <span>Твоя опора</span>
         </div>
 
@@ -260,13 +293,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             Мы подберём тренера под ваш уровень, характер и задачи.</p>
 
         <div class="arrows">
-            <img src="src/images/arr-lt.png" id="arrow-left">
-            <img src="src/images/arr-rt.png" id="arrow-right">
+            <img src="src/images/arr-lt.svg" id="arrow-left">
+            <img src="src/images/arr-rt.svg" id="arrow-right">
         </div>
 
         <div class="container" id="slider">
             <div class="block">
-                <img src="src/images/tr-1.png" alt="Русу Диана">
+                <img src="src/images/tr-1.png" alt="Русу Диана — тренер групповых и индивидуальных тренировок с 12-летним опытом">
                 <div class="overlay">
                     <p class="name">Русу Диана</p>
                     <p>Тренер групповых и индивидуальных тренировок</p>
@@ -275,7 +308,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <div class="block">
-                <img src="src/images/tr-2.png" alt="Виктор Василика">
+                <img src="src/images/tr-2.png" alt="Виктор Василика — персональный тренер с 4-летним опытом">
                 <div class="overlay">
                     <p class="name">Виктор Василика</p>
                     <p>Персональный тренер</p>
@@ -284,7 +317,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <div class="block">
-                <img src="src/images/tr-3.png" alt="Николае Кистругэ">
+                <img src="src/images/tr-3.png" alt="Николае Кистругэ — тренер по Karate-Do с 20-летним опытом">
                 <div class="overlay">
                     <p class="name">Николае Кистругэ</p>
                     <p>Тренер по Karate-Do</p>
@@ -293,7 +326,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <div class="block">
-                <img src="src/images/tr-4.png" alt="Максим Балан">
+                <img src="src/images/tr-4.png" alt="Максим Балан — персональный тренер с 10-летним опытом">
                 <div class="overlay">
                     <p class="name">Максим Балан</p>
                     <p>Персональный тренер</p>
@@ -302,7 +335,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <div class="block">
-                <img src="src/images/tr-5.png" alt="Олег Абалин">
+                <img src="src/images/tr-5.png" alt="Олег Абалин — тренер по Karate-Do с 36-летним опытом">
                 <div class="overlay">
                     <p class="name">Олег Абалин</p>
                     <p>Тренер по Karate-Do</p>
@@ -315,7 +348,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Блок с галлерей -->
     <div class="gallery">
         <div class="nav">
-            <img src="src/images/nav-line.png">
+            <img src="src/images/nav-line.svg">
             <span>Атмосфера клуба</span>
         </div>
 
@@ -325,28 +358,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="container">
             <div class="block">
-                <img src="src/images/gal-2.png">
-                <img src="src/images/gal-1.png">
-                <img src="src/images/gal-3.png">
+                <img src="src/images/gal-2.png" alt="Современный тренажерный зал фитнес клуба Global Fitness в Кишинёве">
+                <img src="src/images/gal-1.png" alt="Чистая и просторная раздевалка фитнес клуба Global Fitness">
+                <img src="src/images/gal-3.png" alt="Сауна для релаксации в фитнес клубе Global Fitness, Чеканы">
             </div>
 
             <div class="block">
-                <img src="src/images/gal-4.png">
-                <img src="src/images/gal-5.png">
-                <img src="src/images/gal-6.png">
+                <img src="src/images/gal-4.png" alt="Современный тренажерный зал фитнес клуба Global Fitness в Кишинёве">
+                <img src="src/images/gal-5.png" alt="Современный тренажерный зал фитнес клуба Global Fitness в Кишинёве">
+                <img src="src/images/gal-6.png" alt="Современный тренажерный зал фитнес клуба Global Fitness в Кишинёве">
             </div>
 
             <div class="block">
-                <img src="src/images/gal-7.png">
-                <img src="src/images/gal-8.png">
-                <img src="src/images/gal-9.png">
+                <img src="src/images/gal-7.png" alt="Зал для занятий каратэ и пилатесом в клубе Global Fitness, Чеканы">
+                <img src="src/images/gal-8.png" alt="Зал для занятий каратэ и пилатесом в клубе Global Fitness, Чеканы">
+                <img src="src/images/gal-9.png" alt="Зал для занятий каратэ и пилатесом в клубе Global Fitness, Чеканы">
             </div>
         </div>
     </div>
 
     <!-- Блок с отзывом -->
     <div class="review" id="reviews">
-        <img src="src/images/review.png" alt="Иван Янаки">
+        <img src="src/images/review.svg" alt="Иван Янаки">
         <div class="text">
             <h3>“Раньше не было энергии — теперь летаю!”</h3>
             <span>До тренировок в клубе чувствовал себя вялым и уставшим, даже после выходных. Уже через пару недель
@@ -360,7 +393,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Блок с абонементами -->
     <div class="prices" id="prices">
         <div class="nav">
-            <img src="src/images/nav-line.png">
+            <img src="src/images/nav-line.svg">
             <span>АБОНЕМЕНТЫ</span>
         </div>
 
@@ -376,14 +409,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!-- Абонементы -->
             <div class="block hot">
                 <div class="special">
-                    <img src="src/images/hot.png" alt="HOT">
+                    <img src="src/images/hot.svg" alt="HOT">
                 </div>
 
                 <h5 class="first-h5">12 МЕСЯЦЕВ</h5>
                 <h5>DAY CARD</h5>
 
                 <div class="line">
-                    <img src="src/images/dumbbell-pr.png">
+                    <img src="src/images/dumbbell-pr.svg">
                     <span>Фитнесс зал</span>
                 </div>
 
@@ -401,14 +434,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <div class="block hot">
                 <div class="special">
-                    <img src="src/images/hot.png" alt="HOT">
+                    <img src="src/images/hot.svg" alt="HOT">
                 </div>
 
                 <h5 class="first-h5">6 МЕСЯЦЕВ</h5>
                 <h5>DAY CARD</h5>
 
                 <div class="line">
-                    <img src="src/images/dumbbell-pr.png">
+                    <img src="src/images/dumbbell-pr.svg">
                     <span>Фитнесс зал</span>
                 </div>
 
@@ -428,7 +461,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h5>DAY CARD</h5>
 
                 <div class="line">
-                    <img src="src/images/dumbbell-pr.png">
+                    <img src="src/images/dumbbell-pr.svg">
                     <span>Фитнесс зал</span>
                 </div>
 
@@ -448,7 +481,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h5>DAY CARD</h5>
 
                 <div class="line">
-                    <img src="src/images/dumbbell-pr.png">
+                    <img src="src/images/dumbbell-pr.svg">
                     <span>Фитнесс зал</span>
                 </div>
 
@@ -470,7 +503,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h5>ВЫХОДНОГО ДНЯ</h5>
 
                 <div class="line">
-                    <img src="src/images/dumbbell-pr.png">
+                    <img src="src/images/dumbbell-pr.svg">
                     <span>Фитнесс зал</span>
                 </div>
 
@@ -491,7 +524,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h5>ТРЕНИРОВКИ</h5>
 
                 <div class="line">
-                    <img src="src/images/dumbbell-pr.png">
+                    <img src="src/images/dumbbell-pr.svg">
                     <span>Фитнесс зал</span>
                 </div>
 
@@ -510,7 +543,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h5>ТРЕНИРОВКИ</h5>
 
                 <div class="line">
-                    <img src="src/images/dumbbell-pr.png">
+                    <img src="src/images/dumbbell-pr.svg">
                     <span>Фитнесс зал</span>
                 </div>
 
@@ -529,7 +562,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h5>ГРУПП. ТРЕН.</h5>
 
                 <div class="line">
-                    <img src="src/images/group.png">
+                    <img src="src/images/group.svg">
                     <span>Групповые тренировки</span>
                 </div>
 
@@ -550,7 +583,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h5>ГРУПП. ТРЕН.</h5>
 
                 <div class="line">
-                    <img src="src/images/group.png">
+                    <img src="src/images/group.svg">
                     <span>Групповые тренировки</span>
                 </div>
 
@@ -570,7 +603,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h5>ГРУППА</h5>
 
                 <div class="line">
-                    <img src="src/images/judo.png">
+                    <img src="src/images/judo.svg">
                     <span>Групповые тренировки</span>
                 </div>
 
@@ -590,7 +623,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h5>ГРУППА</h5>
 
                 <div class="line">
-                    <img src="src/images/judo.png">
+                    <img src="src/images/judo.svg">
                     <span>Групповые тренировки</span>
                 </div>
 
@@ -610,7 +643,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h5>ГРУППA</h5>
 
                 <div class="line">
-                    <img src="src/images/judo.png">
+                    <img src="src/images/judo.svg">
                     <span>Групповые тренировки</span>
                 </div>
 
@@ -630,11 +663,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!-- Блока "Почему выбирают нас" -->
     <div class="chose steps">
-        <img class="main-img" src="src/images/chose-img.png">
+        <img class="main-img" src="src/images/chose-img.svg">
 
         <div class="container">
             <div class="nav">
-                <img src="src/images/nav-line.png">
+                <img src="src/images/nav-line.svg">
                 <span>Забота и результат</span>
             </div>
 
@@ -644,21 +677,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <div class="sub-container">
                 <div class="block">
-                    <img src="src/images/human-ch.png">
+                    <img src="src/images/human-ch.svg">
                     <div class="text">
                         <p class="top-p">Индивидуальный подход</p>
                         <p>Подбираем программу с учётом целей, уровня и предпочтений.</p>
                     </div>
                 </div>
                 <div class="block">
-                    <img src="src/images/eat-ch.png">
+                    <img src="src/images/eat-ch.svg">
                     <div class="text">
                         <p class="top-p">Программа питания</p>
                         <p>Сбалансированный рацион для энергии и результата.</p>
                     </div>
                 </div>
                 <div class="block">
-                    <img src="src/images/heart-cs.png">
+                    <img src="src/images/heart-cs.svg">
                     <div class="text">
                         <p class="top-p">Безопасные тренировки</p>
                         <p>Тренируемся грамотно, без перегрузок и травм.</p>
@@ -676,7 +709,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="maps" id="contacts">
         <div class="container">
             <div class="nav">
-                <img src="src/images/nav-line.png">
+                <img src="src/images/nav-line.svg">
                 <span>Связь с нами</span>
             </div>
 
@@ -704,7 +737,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="consultation" id="form">
         <div class="nav">
             <span>ГОТОВ НАЧАТЬ?</span>
-            <img src="src/images/nav-line.png">
+            <img src="src/images/nav-line.svg">
         </div>
 
         <h2>Получи <b>бесплатную</b></h2>
@@ -748,14 +781,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <footer>
         <div class="container">
             <div class="block block-1">
-                <img class="logo" src="src/images/logo.png" alt="Global Fitness">
+                <img class="logo" src="src/images/logo.svg" alt="Global Fitness">
                 <p>Global Fitness — тренировки c комфортом и результатом.</p>
 
                 <div class="socials">
-                    <a href="https://www.instagram.com/global.fitness.md/"><img src="src/images/instagram.png"
+                    <a href="https://www.instagram.com/global.fitness.md/"><img src="src/images/instagram.svg"
                             alt="Instagram"></a>
                     <a href="https://www.facebook.com/global.fitness.md/?locale=ru_RU"><img
-                            src="src/images/facebook.png" alt="Facebook"></a>
+                            src="src/images/facebook-16.svg" alt="Facebook"></a>
                 </div>
             </div>
 
@@ -768,34 +801,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <div class="block block-3">
                 <div class="sub-block">
-                    <img src="src/images/phone.png">
+                    <img src="src/images/phone.svg">
                     <span>+373 788 555 88</span>
                 </div>
                 <div class="sub-block">
-                    <img src="src/images/phone.png">
+                    <img src="src/images/phone.svg">
                     <span>0 (22) 622-258</span>
                 </div>
                 <div class="sub-block">
-                    <img src="src/images/adress-point.png">
+                    <img src="src/images/adress-point.svg">
                     <span>str. Mircea cel Bătrân 39, Chișinău</span>
                 </div>
                 <div class="sub-block">
-                    <img src="src/images/mail.png">
+                    <img src="src/images/mail.svg">
                     <span>info@globalfitness.md</span>
                 </div>
             </div>
 
             <div class="block block-3">
                 <div class="sub-block">
-                    <img src="src/images/clock.png">
+                    <img src="src/images/clock.svg">
                     <span>Пн-Пт: 08:00 – 22:00</span>
                 </div>
                 <div class="sub-block">
-                    <img src="src/images/clock.png">
+                    <img src="src/images/clock.svg">
                     <span>Суббота: 08:00 – 18:00</span>
                 </div>
                 <div class="sub-block">
-                    <img src="src/images/clock.png">
+                    <img src="src/images/clock.svg">
                     <span>Воскресенье: 09:00 – 15:00</span>
                 </div>
             </div>
@@ -806,7 +839,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="second-container">
             <span>© Global Fitness, All Rights Reverved, <a href="https://www.instagram.com/agency.omnify/">Designed &
                     Developed by Omnify Agency</a></span>
-            <a href="">Правила поведения в клубе</a>
+            <a href="Regulile clubului Global Fitness.docx" download>Правила поведения в клубе</a>
         </div>
     </footer>
 
