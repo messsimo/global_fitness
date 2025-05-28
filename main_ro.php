@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Подключение CSS -->
     <link rel="stylesheet" href="src/css/index.css">
     <link rel="stylesheet" href="src/css/adaptation.css">
-    <title>Clubul de fitness Global Fitness în Țicani — sală de forță, saună, karate pentru copii</title>
+    <title>Clubul de fitness Global Fitness la Ciocana — sală de forță, saună, karate pentru copii</title>
 
     <!-- SEO -->
     <meta name="description"
@@ -104,9 +104,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <a href="#contacts">Contacte</a>
                 </div>
                 <div class="language">
-                    <a href="main_ro.php" class="active">RO</a>
+                    <a href="/ro" class="active">RO</a>
                     <img src="src/images/bar.svg">
-                    <a href="index.php">RU</a>
+                    <a href="/">RU</a>
                 </div>
 
                 <div class="burger">
@@ -154,9 +154,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!-- Блок Hero -->
     <div class="hero">
-        <h1 class="visually-hidden">Clubul de fitness Global Fitness în Țicani — sală de forță, saună, karate pentru
+        <h1 class="visually-hidden">Clubul de fitness Global Fitness la Ciocana — sală de forță, saună, karate pentru
             copii</h1>
-        <h2 class="visually-hidden">Despre clubul de fitness Global Fitness în Țicani</h2>
+        <h2 class="visually-hidden">Despre clubul de fitness Global Fitness în Ciocana</h2>
         <h2 class="visually-hidden">De ce aleg Global Fitness</h2>
         <h2 class="visually-hidden">Avantajele și caracteristicile noastre</h2>
         <h2 class="visually-hidden">Sală de forță pentru bărbați și femei</h2>
@@ -174,7 +174,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h2 class="visually-hidden">Povești de succes și transformări</h2>
         <h2 class="visually-hidden">Fotografii ale sălii de forță și bazinului</h2>
         <h2 class="visually-hidden">Video și fotografii de la antrenamente și evenimente</h2>
-        <h2 class="visually-hidden">Adresa clubului de fitness în Țicani, Chișinău</h2>
+        <h2 class="visually-hidden">Adresa clubului de fitness în Ciocana, Chișinău</h2>
         <h2 class="visually-hidden">Cum ne poți găsi</h2>
         <h2 class="visually-hidden">Program și înscrieri pentru antrenamente</h2>
         <h2 class="visually-hidden">Întrebări despre antrenamente și abonamente</h2>

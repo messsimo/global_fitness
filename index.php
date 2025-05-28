@@ -104,9 +104,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <a href="#contacts">Контакты</a>
                 </div>
                 <div class="language">
-                    <a href="main_ro.php">RO</a>
+                    <a href="/ro">RO</a>
                     <img src="src/images/bar.svg">
-                    <a href="index.php" class="active">RU</a>
+                    <a href="/" class="active">RU</a>
                 </div>
 
                 <div class="burger">
