@@ -119,7 +119,7 @@
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 403px) {
     .hero .text h2 {
         font-size: 28px;
     }
@@ -435,6 +435,7 @@
     .gallery .container .block img {
         width: 100%;
         height: 600px;
+        margin-right: 0;
     }
 }
 

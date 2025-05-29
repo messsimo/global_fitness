@@ -59,6 +59,7 @@ header {
 header .logo {
     width: 200px;
     height: 60px;
+    transform: scale(1.7);
 }
 
 header .side-block .top {
@@ -137,13 +138,12 @@ header .side-block .bottom .burger .close-btn {
 
 .dropdown-burger {
     display: block;
-    width: 100%;
+    right: 0;
     position: absolute;
     left: 0;
     height: 90vh;
     padding-left: 50px;
     background-color: #000C11;
-
     opacity: 0;
     pointer-events: none;
     transform: translateY(-20px);
@@ -1123,5 +1123,5 @@ footer .second-container a {
 
 /* Лингвисткие стили */
 .services .h2-ro-services {
-    font-size: 114px;
+    font-size: 8vw;
 }
