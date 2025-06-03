@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($phone)) {
         $_SESSION["error-phone"] = "Acesta este un câmp obligatoriu.";
         $hasError = true;
-    } elseif (!preg_match('/^\+?\d{8,20}$/', $phone)) {
+    } elseif (!preg_match('/^\d{9}$/', $phone)) {
         $_SESSION["error-phone"] = "Număr de telefon incorect";
         $hasError = true;
     }
@@ -77,6 +77,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="keywords"
         content="club de fitness Țicani, sală de forță Chișinău, antrenamente personale pentru bărbați, antrenamente de forță Chișinău, antrenamente de grup pentru bărbați, fitness pentru bărbați 25–35 ani, antrenamente pentru creșterea masei musculare, fitness pentru începători bărbați, antrenamente pentru creșterea masei musculare, sală de forță pentru studenți, cluburi de fitness în Țicani, abonament la sală Chișinău, antrenamente pentru bărbați 18–25 ani, fitness pentru femei Chișinău, antrenamente de grup pentru femei, yoga pentru slăbit, antrenamente pentru femei 18–23 ani, club de fitness Țicani pentru femei, programe de slăbire Chișinău, karate pentru copii Chișinău, secție karate Țicani, antrenamente de karate pentru adolescenți, cluburi de karate în Chișinău, activități de karate pentru copii 12–18 ani, karate pentru începători copii, saună Chișinău, solar în Țicani, cabinet de masaj Chișinău, antrenamente individuale Chișinău, antrenamente de fitness în grup, club de fitness cu saună și solar">
     <link rel="canonical" href="https://globalfitness.md/" />
+
+    <meta property="og:title"
+        content="Global Fitness — sală de fitness în Chișinău, Ciocana: sală de forță, saună, karate pentru copii" />
+    <meta property="og:description"
+        content="Pagina clubului de fitness, cu antrenori, sala și servicii prezentate, plus posibilitatea de a programa o consultație" />
+    <meta property="og:image" content="https://globalfitness.md/assets/preview.jpg" />
+    <meta property="og:url" content="https://globalfitness.md" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Global Fitness" />
 </head>
 
 <body>
@@ -105,7 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <a href="#contacts">Contacte</a>
                 </div>
                 <div class="language">
-                    <a href="/ro" class="active">RO</a>
+                    <a href="/main_ro.php" class="active">RO</a>
                     <img src="src/images/bar.svg">
                     <a href="/">RU</a>
                 </div>
@@ -185,7 +194,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="text">
             <h2>Devino cel mai bun cu</h2>
             <h2><b>Global Fitness!</b></h2>
-            <p>Un club de fitness modern în centrul Chișinăului, cu antrenori profesioniști și abordare individuală!</p>
+            <p>Сlub de fitness modern în sectorul Сiocana — cu echipamente performante și suport dedicat!</p>
             <a href="#form">Consultanție gratuită</a>
         </div>
     </div>
@@ -230,7 +239,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!-- Блок "Как это работает" -->
     <div class="steps">
-        <img class="main-img" src="src/images/steps.svg" alt="Global Fitenss">
+        <img class="main-img" src="src/images/steps.jpg" alt="Global Fitenss">
 
         <div class="container">
             <div class="nav">
@@ -277,11 +286,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h2 class="h2-ro-services">SERVICIILE NOASTRE</h2>
 
         <div class="container">
-            <img src="src/images/ser-1.svg" alt="Antrenament individual cu antrenor personal la clubul Global Fitness">
-            <img src="src/images/ser-2.svg"
+            <img src="src/images/ser-1-ro.svg"
+                alt="Antrenament individual cu antrenor personal la clubul Global Fitness">
+            <img src="src/images/ser-2-ro.svg"
                 alt="Antrenament de grup de yoga și pilates la clubul de fitness Global Fitness, Chișinău">
-            <img src="src/images/ser-3.svg" alt="Antrenament de karate pentru copii 12-18 ani la clubul Global Fitness">
-            <img src="src/images/ser-4.svg" alt="Saună pentru relaxare la clubul de fitness Global Fitness, Țicani">
+            <img src="src/images/ser-3-ro.svg"
+                alt="Antrenament de karate pentru copii 12-18 ani la clubul Global Fitness">
+            <img src="src/images/ser-4-ro.svg" alt="Saună pentru relaxare la clubul de fitness Global Fitness, Țicani">
         </div>
     </div>
 
@@ -340,11 +351,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <div class="block">
-                <img src="src/images/tr-5.svg" alt="Oleg Abalin — antrenor de Karate-Do cu 36 de ani experiență">
+                <img src="src/images/tr-5.png" alt="Oleg Abalin — antrenor de Karate-Do cu 36 de ani experiență">
                 <div class="overlay">
                     <p class="name">Oleg Abalin</p>
                     <p>Antrenor de Karate-Do</p>
                     <p>36 de ani de experiență</p>
+                </div>
+            </div>
+
+            <div class="block">
+                <img src="src/images/tr-6.svg" alt="Șchivu Valeria — administrator">
+                <div class="overlay">
+                    <p class="name">Șchivu Valeria</p>
+                    <p>Administrator</p>
+                </div>
+            </div>
+
+            <div class="block">
+                <img src="src/images/tr-7.svg" alt="Namolovan Sanda — administrator">
+                <div class="overlay">
+                    <p class="name">Namolovan Sanda</p>
+                    <p>Administrator</p>
                 </div>
             </div>
         </div>
@@ -360,26 +387,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h2>Descoperă <b>Global Fitness</b></h2>
         <p>Vezi cum arată drumul tău spre rezultate: săli spațioase, echipamente moderne și zone confortabile.</p>
 
-        <div class="container">
-            <div class="block">
+        <div class="arrows">
+            <img src="src/images/arr-lt.png" id="arrow-left-3">
+            <img src="src/images/arr-rt.png" id="arrow-right-3">
+        </div>
+
+        <div class="container" id="slider-3">
+            <div class="block slide active">
                 <img src="src/images/gal-2.png" alt="Sălă modernă de fitness a clubului Global Fitness din Chișinău">
                 <img src="src/images/gal-1.png" alt="Vestiar curat și spațios al clubului de fitness Global Fitness">
                 <img src="src/images/gal-3.png" alt="Saună pentru relaxare la clubul de fitness Global Fitness, Țicani">
             </div>
 
-            <div class="block">
+            <div class="block slide">
                 <img src="src/images/gal-4.png" alt="Sălă modernă de fitness a clubului Global Fitness din Chișinău">
                 <img src="src/images/gal-5.png" alt="Sălă modernă de fitness a clubului Global Fitness din Chișinău">
                 <img src="src/images/gal-6.png" alt="Sălă modernă de fitness a clubului Global Fitness din Chișinău">
             </div>
 
-            <div class="block">
-                <img src="src/images/gal-7.png"
-                    alt="Sală pentru antrenamente de karate și pilates la clubul Global Fitness, Țicani">
-                <img src="src/images/gal-8.png"
-                    alt="Sală pentru antrenamente de karate și pilates la clubul Global Fitness, Țicani">
-                <img src="src/images/gal-9.png"
-                    alt="Sală pentru antrenamente de karate și pilates la clubul Global Fitness, Țicani">
+            <div class="block slide">
+                <img src="src/images/gal-7.png" alt="Sală pentru antrenamente de karate și pilates la clubul Global Fitness, Țicani">
+                <img src="src/images/gal-8.png" alt="Sală pentru antrenamente de karate și pilates la clubul Global Fitness, Țicani">
+                <img src="src/images/gal-9.png" alt="Sală pentru antrenamente de karate și pilates la clubul Global Fitness, Țicani">
             </div>
         </div>
     </div>
@@ -505,6 +534,88 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="price">
                     <p>Preț:</p>
                     <p class="value">450 lei</p>
+                </div>
+            </div>
+
+            <!-- Nelimetat -->
+            <!-- Abonamente nelimitate -->
+            <div class="block">
+                <h5 class="first-h5">12 LUNI</h5>
+                <h5>NELIMITAT</h5>
+
+                <div class="line">
+                    <img src="src/images/dumbbell-pr.svg">
+                    <span>Sală de fitness</span>
+                </div>
+
+                <ul>
+                    <li>12 luni</li>
+                    <li>Include înghețare pentru 2 luni</li>
+                </ul>
+
+                <div class="price">
+                    <p>Preț:</p>
+                    <p class="value">4 800 lei</p>
+                </div>
+            </div>
+
+            <div class="block">
+                <h5 class="first-h5">6 LUNI</h5>
+                <h5>NELIMITAT</h5>
+
+                <div class="line">
+                    <img src="src/images/dumbbell-pr.svg">
+                    <span>Sală de fitness</span>
+                </div>
+
+                <ul>
+                    <li>6 luni</li>
+                    <li>Include înghețare pentru 1 lună</li>
+                </ul>
+
+                <div class="price">
+                    <p>Preț:</p>
+                    <p class="value">2 700 lei</p>
+                </div>
+            </div>
+
+            <div class="block">
+                <h5>3 LUNI</h5>
+                <h5>NELIMITAT</h5>
+
+                <div class="line">
+                    <img src="src/images/dumbbell-pr.svg">
+                    <span>Sală de fitness</span>
+                </div>
+
+                <ul>
+                    <li>3 luni</li>
+                    <li>Include înghețare pentru 2 săptămâni</li>
+                </ul>
+
+                <div class="price">
+                    <p>Preț:</p>
+                    <p class="value">1 500 lei</p>
+                </div>
+            </div>
+
+            <div class="block">
+                <h5>1 LUNĂ</h5>
+                <h5>NELIMITAT</h5>
+
+                <div class="line">
+                    <img src="src/images/dumbbell-pr.svg">
+                    <span>Sală de fitness</span>
+                </div>
+
+                <ul>
+                    <li>1 lună</li>
+                    <li>Fără înghețare</li>
+                </ul>
+
+                <div class="price">
+                    <p>Preț:</p>
+                    <p class="value">550 lei</p>
                 </div>
             </div>
 
@@ -736,7 +847,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <span>Adresă: str. Mircea cel Bătrân 39, Chișinău, Moldova</span>
                 <span>Telefon: +373 788 555 88</span>
                 <span>Telefon: 0 (22) 622-258</span>
-                <span>E-mail: info@globalfitness.md</span>
+                <span>E-mail: globalfitnessmd@mail.ru</span>
                 <span>Luni–Vineri: 08:00 – 22:00</span>
                 <span>Sâmbătă: 08:00 – 18:00</span>
                 <span>Duminică: 09:00 – 15:00</span>
@@ -825,7 +936,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div class="sub-block">
                     <img src="src/images/mail.svg">
-                    <span>info@globalfitness.md</span>
+                    <span>globalfitnessmd@mail.ru</span>
                 </div>
             </div>
 
@@ -857,7 +968,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Подключение JS -->
     <script src="src/js/slider_team.js"></script>
     <script src="src/js/slider_prices.js"></script>
+    <script src="src/js/slider_gallery.js"></script>
     <script src="src/js/burger.js"></script>
 </body>
-
 </html>

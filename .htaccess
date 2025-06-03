@@ -1,60 +1,70 @@
-# Включаем отображение ошибок (можно отключить на проде)
-php_flag display_errors On
+# Включить модуль переписывания URL
+RewriteEngine On
 
-# Сжатие GZIP
-<IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/plain
-  AddOutputFilterByType DEFLATE text/css
-  AddOutputFilterByType DEFLATE text/javascript
-  AddOutputFilterByType DEFLATE application/javascript
-  AddOutputFilterByType DEFLATE application/x-javascript
-  AddOutputFilterByType DEFLATE application/json
-  AddOutputFilterByType DEFLATE application/xml
-  AddOutputFilterByType DEFLATE application/xhtml+xml
-  AddOutputFilterByType DEFLATE application/rss+xml
-  AddOutputFilterByType DEFLATE application/atom_xml
-  AddOutputFilterByType DEFLATE image/svg+xml
-</IfModule>
+# Редирект с main_ro.php на /ro
+RewriteCond %{THE_REQUEST} \s/main_ro\.php\s [NC]
+RewriteRule ^main_ro\.php$ /ro [R=301,L]
 
-# Кэширование статических файлов
+# Редирект с index.php на /
+RewriteCond %{THE_REQUEST} \s/index\.php\s [NC]
+RewriteRule ^index\.php$ / [R=301,L]
+
+# ЧПУ: /ro → main_ro.php
+RewriteRule ^ro/?$ main_ro.php [L]
+
+# ЧПУ: / → index.php
+RewriteRule ^$ index.php [L]
+
+# Обработка 404: если файл или папка не существует, перенаправить на 404.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ 404.php [L]
+
+# Защита от просмотра содержимого папок
+Options -Indexes
+
+# Установка кодировки
+AddDefaultCharset UTF-8
+
+# Настройка кэширования для статических ресурсов (изображения, CSS, JS)
 <IfModule mod_expires.c>
   ExpiresActive On
+
+  # Кэшировать изображения на 1 месяц
   ExpiresByType image/jpg "access plus 1 month"
   ExpiresByType image/jpeg "access plus 1 month"
   ExpiresByType image/gif "access plus 1 month"
   ExpiresByType image/png "access plus 1 month"
-  ExpiresByType text/css "access plus 1 week"
-  ExpiresByType text/javascript "access plus 1 week"
-  ExpiresByType application/javascript "access plus 1 week"
-  ExpiresByType application/x-javascript "access plus 1 week"
-  ExpiresByType application/font-woff "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+
+  # Кэшировать шрифты
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+
+  # Кэшировать стили и скрипты
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
 </IfModule>
 
-# Защита от доступа к скрытым файлам
-<FilesMatch "^\.">
-  Order allow,deny
-  Deny from all
-</FilesMatch>
+# Сжатие ресурсов для уменьшения размера
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
 
-# Заголовки безопасности
+# Заголовки для безопасности и ускорения
 <IfModule mod_headers.c>
   Header set X-Content-Type-Options "nosniff"
   Header set X-Frame-Options "SAMEORIGIN"
   Header set X-XSS-Protection "1; mode=block"
+
+  # Разрешить кэшировать изображения и статические файлы
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|js|css)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
 </IfModule>
-
-# Индексный файл
-DirectoryIndex index.php
-
-# Включаем обработку ошибок
-ErrorDocument 404 /404.html
-
-# Включаем модуль переписывания URL
-RewriteEngine On
-RewriteBase /
-
-# Перенаправление / на index.php
-RewriteRule ^$ index.php [L]
-
-# Перенаправление /ro на main_ro.php
-RewriteRule ^ro$ main_ro.php [L]

@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($phone)) {
         $_SESSION["error-phone"] = "Это обязательное поле";
         $hasError = true;
-    } elseif (!preg_match('/^\+?\d{8,20}$/', $phone)) {
+    } elseif (!preg_match('/^\d{9}$/', $phone)) {
         $_SESSION["error-phone"] = "Некорректный номер телефона";
         $hasError = true;
     }
@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </body>
                     </html>
                     ";
-        $headers = "From: no-reply@globalfitness.md\r\n";
+        $headers = "From: anatolganjea@gmail.com\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
@@ -77,6 +77,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="keywords"
         content="фитнес клуб Чеканы, тренажерный зал Кишинёв, персональные тренировки для мужчин, силовые тренировки Кишинёв, групповые тренировки для мужчин, фитнес для мужчин 25–35 лет, тренировки для набора массы, фитнес для начинающих мужчин, тренировки для набора мышечной массы, тренажерный зал для студентов, фитнес клубы в Чеканах, абонемент в спортзал Кишинёв, тренировки для мужчин 18–25 лет, фитнес для женщин Кишинёв, групповые тренировки для женщин, йога для похудения, тренировки для женщин 18–23 лет, фитнес клуб Чеканы для женщин, программы похудения Кишинёв, каратэ для детей Кишинёв, секция каратэ Чеканы, тренировки по каратэ для подростков, каратэ клубы в Кишинёве, занятия каратэ для детей 12–18 лет, каратэ для начинающих детей, сауна Кишинёв, солярий в Чеканах, массажный кабинет Кишинёв, индивидуальные тренировки Кишинёв, групповые фитнес-занятия, фитнес клуб с сауной и солярием">
     <link rel="canonical" href="https://globalfitness.md/" />
+
+    <meta property="og:title"
+        content="Фитнес клуб Global Fitness в Чеканах — тренажерный зал, сауна, каратэ для детей" />
+    <meta property="og:description"
+        content="Страница фитнес клуба, показаны тренера, сам зал и услуги, а также есть запись на консультацию" />
+    <meta property="og:image" content="https://globalfitness.md/assets/preview.jpg" />
+    <meta property="og:url" content="https://globalfitness.md" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Global Fitness" />
 </head>
 
 <body>
@@ -105,7 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <a href="#contacts">Контакты</a>
                 </div>
                 <div class="language">
-                    <a href="/ro">RO</a>
+                    <a href="/main_ro.php">RO</a>
                     <img src="src/images/bar.svg">
                     <a href="/" class="active">RU</a>
                 </div>
@@ -183,7 +192,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="text">
             <h2>Стань лучшей версией</h2>
             <h2>себя с <b>Global Fitness!</b></h2>
-            <p>Современный фитнес-клуб в центре Кишинёва с профессиональными тренерами и индивидуальным подходом!</p>
+            <p>ССовременный фитнес-клуб в секторе Чеканы — с современным оборудованием и внимательным подходом!</p>
             <a href="#form">Бесплатная консультация</a>
         </div>
     </div>
@@ -228,7 +237,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!-- Блок "Как это работает" -->
     <div class="steps">
-        <img class="main-img" src="src/images/steps.svg" alt="Global Fitenss">
+        <img class="main-img" src="src/images/steps2.svg" alt="Global Fitenss">
 
         <div class="container">
             <div class="nav">
@@ -277,7 +286,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="container">
             <img src="src/images/ser-1.svg" alt="Индивидуальная тренировка с персональным тренером в клубе Global Fitness">
             <img src="src/images/ser-2.svg" alt="Групповое занятие по йоге и пилатесу в фитнес клубе Global Fitness, Кишинёв">
-            <img src="src/images/ser-3.svg" alt="Тренировка по каратэ для детей 12-18 лет в клубе Global Fitness">
+            <img src="src/images/ser-3svg.svg" alt="Тренировка по каратэ для детей 12-18 лет в клубе Global Fitness">
             <img src="src/images/ser-4.svg" alt="Сауна для релаксации в фитнес клубе Global Fitness, Чеканы">
         </div>
     </div>
@@ -300,7 +309,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="container" id="slider">
             <div class="block">
-                <img src="src/images/tr-1.png" alt="Русу Диана — тренер групповых и индивидуальных тренировок с 12-летним опытом">
+                <img src="src/images/tr-1.png"
+                    alt="Русу Диана — тренер групповых и индивидуальных тренировок с 12-летним опытом">
                 <div class="overlay">
                     <p class="name">Русу Диана</p>
                     <p>Тренер групповых и индивидуальных тренировок</p>
@@ -343,6 +353,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <p>36 лет опыта</p>
                 </div>
             </div>
+
+            <div class="block">
+                <img src="src/images/tr-6.svg" alt="Шиву Валерия — администратор">
+                <div class="overlay">
+                    <p class="name">Шиву Валерия</p>
+                    <p>Администратор</p>
+                </div>
+            </div>
+
+            <div class="block">
+                <img src="src/images/tr-7.svg" alt="Намолован Санда — администратор">
+                <div class="overlay">
+                    <p class="name">Намолован Санда</p>
+                    <p>Администратор</p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -354,23 +380,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
         <h2>Загляни внутрь <b>Global Fitness</b></h2>
-        <p>Посмотри, где проходит твой путь к результату — просторные залы, современное оборудование и уют в каждой
-            зоне.</p>
+        <p>Посмотри, где проходит твой путь к результату — просторные залы, современное оборудование и уют в каждой зоне.</p>
 
-        <div class="container">
-            <div class="block">
+        <div class="arrows">
+            <img src="src/images/arr-lt.png" id="arrow-left-3">
+            <img src="src/images/arr-rt.png" id="arrow-right-3">
+        </div>
+
+        <div class="container" id="slider-3">
+            <div class="block slide active">
                 <img src="src/images/gal-2.png" alt="Современный тренажерный зал фитнес клуба Global Fitness в Кишинёве">
                 <img src="src/images/gal-1.png" alt="Чистая и просторная раздевалка фитнес клуба Global Fitness">
                 <img src="src/images/gal-3.png" alt="Сауна для релаксации в фитнес клубе Global Fitness, Чеканы">
             </div>
 
-            <div class="block">
+            <div class="block slide">
                 <img src="src/images/gal-4.png" alt="Современный тренажерный зал фитнес клуба Global Fitness в Кишинёве">
                 <img src="src/images/gal-5.png" alt="Современный тренажерный зал фитнес клуба Global Fitness в Кишинёве">
                 <img src="src/images/gal-6.png" alt="Современный тренажерный зал фитнес клуба Global Fitness в Кишинёве">
             </div>
 
-            <div class="block">
+            <div class="block slide">
                 <img src="src/images/gal-7.png" alt="Зал для занятий каратэ и пилатесом в клубе Global Fitness, Чеканы">
                 <img src="src/images/gal-8.png" alt="Зал для занятий каратэ и пилатесом в клубе Global Fitness, Чеканы">
                 <img src="src/images/gal-9.png" alt="Зал для занятий каратэ и пилатесом в клубе Global Fitness, Чеканы">
@@ -495,6 +525,85 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="price">
                     <p>Цена:</p>
                     <p class="value">450 лей</p>
+                </div>
+            </div>
+
+            <!-- Безлимитные абонементы -->
+             <div class="block">
+                <h5 class="first-h5">12 МЕСЯЦЕВ</h5>
+                <h5>NO LIMIT</h5>
+
+                <div class="line">
+                    <img src="src/images/dumbbell-pr.svg">
+                    <span>Фитнесс зал</span>
+                </div>
+
+                <ul>
+                    <li>12 месяцев</li>
+                    <li>Включает заморозку на 2 месяца</li>
+                </ul>
+
+                <div class="price">
+                    <p>Цена:</p>
+                    <p class="value">4 800 лей</p>
+                </div>
+            </div>
+
+            <div class="block">
+                <h5 class="first-h5">6 МЕСЯЦЕВ</h5>
+                <h5>NO LIMIT</h5>
+
+                <div class="line">
+                    <img src="src/images/dumbbell-pr.svg">
+                    <span>Фитнесс зал</span>
+                </div>
+
+                <ul>
+                    <li>6 месяцев</li>
+                    <li>Включает заморозку на 1 месяца</li>
+                </ul>
+
+                <div class="price">
+                    <p>Цена:</p>
+                    <p class="value">2 700 лей</p>
+                </div>
+            </div>
+            <div class="block">
+                <h5>3 МЕСЯЦЕВ</h5>
+                <h5>NO LIMIT</h5>
+
+                <div class="line">
+                    <img src="src/images/dumbbell-pr.svg">
+                    <span>Фитнесс зал</span>
+                </div>
+
+                <ul>
+                    <li>3 месяцев</li>
+                    <li>Включает заморозку на 2 недели</li>
+                </ul>
+
+                <div class="price">
+                    <p>Цена:</p>
+                    <p class="value">1 500 лей</p>
+                </div>
+            </div>
+            <div class="block">
+                <h5>1 МЕСЯЦ</h5>
+                <h5>NO LIMIT</h5>
+
+                <div class="line">
+                    <img src="src/images/dumbbell-pr.svg">
+                    <span>Фитнесс зал</span>
+                </div>
+
+                <ul>
+                    <li>1 месяц</li>
+                    <li>Без заморозки</li>
+                </ul>
+
+                <div class="price">
+                    <p>Цена:</p>
+                    <p class="value">550 лей</p>
                 </div>
             </div>
 
@@ -721,7 +830,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <span>Адрес: str. Mircea cel Bătrân 39, Chișinău, Moldova</span>
                 <span>Телефон: +373 788 555 88</span>
                 <span>Телефон: 0 (22) 622-258</span>
-                <span>Почта: info@globalfitness.md</span>
+                <span>Почта: globalfitnessmd@mail.ru</span>
                 <span>Пн-Пт: 08:00 – 22:00</span>
                 <span>Суббота: 08:00 – 18:00</span>
                 <span>Воскресенье: 09:00 – 15:00</span>
@@ -815,7 +924,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div class="sub-block">
                     <img src="src/images/mail.svg">
-                    <span>info@globalfitness.md</span>
+                    <span>globalfitnessmd@mail.ru</span>
                 </div>
             </div>
 
@@ -838,8 +947,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="line"></div>
 
         <div class="second-container">
-            <span>© Global Fitness, All Rights Reverved, <a href="https://www.instagram.com/agency.omnify/">Designed &
-                    Developed by Omnify Agency</a></span>
+            <span>© Global Fitness, All Rights Reverved, <a href="https://www.instagram.com/agency.omnify/">Designed & Developed by Omnify Agency</a></span>
             <a href="Regulile clubului Global Fitness.docx" download>Правила поведения в клубе</a>
         </div>
     </footer>
@@ -847,6 +955,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Подключение JS -->
     <script src="src/js/slider_team.js"></script>
     <script src="src/js/slider_prices.js"></script>
+    <script src="src/js/slider_gallery.js"></script>
     <script src="src/js/burger.js"></script>
 </body>
 

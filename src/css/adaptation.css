@@ -38,24 +38,24 @@
 
 /* Адаптация для главного экрана */
 @media (max-width: 1920px) {
-    .hero {
+    /* .hero {
         height: 50vh;
-    }
+    } */
 }
 
 @media (max-width: 1440px) {
-    .hero {
-        height: 90vh;
-    }
+    /* .hero {
+        height: 85vh;
+    } */
 }
 
 @media (max-width: 1120px) {
-    .hero {
-        height: 80vh;
-    }
+    /* .hero {
+        height: 70vh;
+    } */
 
     .hero .text {
-        padding: 125px 50px;
+        padding: 150px 50px;
     }
 }
 
@@ -75,9 +75,9 @@
 }
 
 @media (max-width: 760px) {
-    .hero {
-        height: 90vh;
-    }
+    /* .hero {
+        height: 65vh;
+    } */
 
     .hero .text {
         padding: 150px 25px;
@@ -97,6 +97,10 @@
     .hero .text a {
         font-size: 12px;
     }
+
+    /* .hero {
+        height: 60vh;
+    } */
 }
 
 @media (max-width: 493px) {
@@ -130,6 +134,22 @@
 
     .hero .text a {
         font-size: 10px;
+    }
+}
+
+@media (max-width: 380px) {
+    .hero .text h2 {
+        font-size: 26px;
+    }
+
+    .hero .text a {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 357px) {
+    .hero .text h2 {
+        font-size: 24px;
     }
 }
 
@@ -489,6 +509,68 @@
     }
 }
 
+/* Слайдер */
+@media screen and (max-width: 640px) {
+    .gallery .container {
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .gallery .container .slide {
+        display: none;
+        flex-shrink: 0;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .gallery .container .slide.active {
+        display: flex;
+    }
+
+    .gallery .container .slide img {
+        width: 30%;
+        margin: 1%;
+    }
+
+    .gallery .arrows {
+        display: block;
+        margin-top: 5px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .gallery .container {
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .gallery .container .slide {
+        display: none;
+        flex-direction: column; 
+        align-items: center;
+        width: 100%;
+    }
+
+    .gallery .container .slide.active {
+        display: flex;
+    }
+
+    .gallery .container .slide img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+        object-fit: cover;
+    }
+
+    .gallery .arrows {
+        display: block;
+        margin-top: 5px;
+    }
+}
+
 @media (max-width: 580px) {
     .gallery .container .block img {
         height: 400px;
@@ -620,6 +702,10 @@
     .prices p {
         font-size: 13px;
         width: 300px;
+    }
+
+    .prices .block {
+        max-width: 300px;
     }
 }
 
