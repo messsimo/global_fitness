@@ -1,58 +1,70 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+// Подключение автозагрузчика Composer
+require 'vendor/autoload.php';
+
 // Запуск сессии
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Экранирование от XSS
     $name = htmlspecialchars(trim($_POST["name"]));
     $phone = htmlspecialchars(trim($_POST["phone"]));
-
     $hasError = false;
 
     // Валидация имени
     if (empty($name)) {
-        $_SESSION["error-name"] = "Acesta este un câmp obligatoriu";
+        $_SESSION["error-name"] = "Это обязательное поле";
         $hasError = true;
     } elseif (mb_strlen($name) < 2) {
-        $_SESSION["error-name"] = "Numele este prea scurt";
+        $_SESSION["error-name"] = "Имя слишком короткое";
         $hasError = true;
     }
 
-    // Валидация телефона
+    // Валидация телефона (9 цифр)
     if (empty($phone)) {
-        $_SESSION["error-phone"] = "Acesta este un câmp obligatoriu.";
+        $_SESSION["error-phone"] = "Это обязательное поле";
         $hasError = true;
     } elseif (!preg_match('/^\d{9}$/', $phone)) {
-        $_SESSION["error-phone"] = "Număr de telefon incorect";
+        $_SESSION["error-phone"] = "Некорректный номер телефона";
         $hasError = true;
     }
 
     if (!$hasError) {
-        $to = "info@globalfitness.md";
-        $subject = "Запрос на консультацию с сайта Global Fitness";
-        $message = "
-                    <html>
-                    <head>
-                        <title>Заявка с сайта Global Fitness</title>
-                    </head>
-                    <body>
-                        <h2>Новая заявка на консультацию</h2>
-                        <p><strong>Имя:</strong> {$name}</p>
-                        <p><strong>Телефон:</strong> {$phone}</p>
-                    </body>
-                    </html>
-                    ";
-        $headers = "From: no-reply@globalfitness.md\r\n";
-        $headers .= "MIME-Version: 1.0\r\n";
-        $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+        $mail = new PHPMailer(true);
 
-        if (mail($to, $subject, $message, $headers)) {
-            $_SESSION["success"] = "Vă mulțumim pentru aplicația dumneavoastră! Vă vom contacta în curând";
-        } else {
-            $_SESSION["error-send"] = "Eroare la trimiterea e-mailului. Vă rugăm să încercați din nou mai târziu";
+        try {
+            // Настройки сервера
+            $mail->isSMTP();
+            $mail->Host       = 'smtp.globalfitness.md'; // SMTP-сервер
+            $mail->SMTPAuth   = true;
+            $mail->Username   = 'globalfitnessmd@mail.ru'; // Почта
+            $mail->Password   = 'saladeforta201814';       // Пароль от почты
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port       = 587;
+
+            // От кого и кому
+            $mail->setFrom('noreply@globalfitness.md', 'Global Fitness');
+            $mail->addAddress('info@globalfitness.md');
+
+            // Контент письма
+            $mail->isHTML(true);
+            $mail->Subject = 'Запрос на консультацию с сайта Global Fitness';
+            $mail->Body    = "
+                <h2>Новая заявка на консультацию</h2>
+                <p><strong>Имя:</strong> {$name}</p>
+                <p><strong>Телефон:</strong> {$phone}</p>
+            ";
+            $mail->CharSet = 'UTF-8';
+
+            $mail->send();
+            $_SESSION["success"] = "Спасибо за заявку! Мы скоро с вами свяжемся.";
+        } catch (Exception $e) {
+            $_SESSION["error-send"] = "Ошибка при отправке письма: " . $mail->ErrorInfo;
         }
 
-        // Редирект для предотвращения повторной отправки
+        session_write_close(); // Завершение сессии перед редиректом
         header("Location: " . $_SERVER["REQUEST_URI"]);
         exit();
     }
@@ -212,25 +224,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="container">
             <div class="top">
                 <div class="block-top block-1 active">
-                    <img src="src/images/bench.svg">
+                    <div class="img"></div>
                     <span>Săli de sport de nouă generație</span>
                 </div>
                 <div class="block-top block-2">
-                    <img src="src/images/blank.svg">
+                    <div class="img"></div>
                     <span>Antrenamente individuale și de grup</span>
                 </div>
                 <div class="block-top block-3">
-                    <img src="src/images/trainer.svg">
+                    <div class="img"></div>
                     <span>Antrenori certificați cu experiență</span>
                 </div>
             </div>
             <div class="bottom">
                 <div class="block-bottom block-4">
-                    <img src="src/images/place.svg">
+                    <div class="img"></div>
                     <span>Locație convenabilă și program flexibil</span>
                 </div>
                 <div class="block-bottom block-5">
-                    <img src="src/images/shower.svg">
+                    <div class="img"></div>
                     <span>Dușuri și vestiare confortabile</span>
                 </div>
             </div>
@@ -239,7 +251,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!-- Блок "Как это работает" -->
     <div class="steps">
-        <img class="main-img" src="src/images/steps.jpg" alt="Global Fitenss">
+        <img class="main-img" src="src/images/steps2.svg" alt="Global Fitenss">
 
         <div class="container">
             <div class="nav">
@@ -333,20 +345,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <div class="block">
-                <img src="src/images/tr-3.png" alt="Nicolae Ciustrugă — antrenor de Karate-Do cu 20 de ani experiență">
+                <img src="src/images/tr-3.png" alt="Maxim Balan — antrenor de Karate-Do cu 20 de ani experiență">
                 <div class="overlay">
-                    <p class="name">Nicolae Chistrugă</p>
-                    <p>Antrenor de Karate-Do</p>
-                    <p>20 de ani de experiență</p>
+                    <p class="name">Maxim Balan</p>
+                    <p>Antrenor personal</p>
+                    <p>10 de ani de experiență</p>
                 </div>
             </div>
 
             <div class="block">
-                <img src="src/images/tr-4.png" alt="Maxim Balan — antrenor personal cu 10 ani experiență">
+                <img src="src/images/tr-4.png" alt="Nicolae Chistrugă — antrenor personal cu 10 ani experiență">
                 <div class="overlay">
-                    <p class="name">Maxim Balan</p>
-                    <p>Antrenor personal</p>
-                    <p>10 ani de experiență</p>
+                    <p class="name">Nicolae Chistrugă</p>
+                    <p>Antrenor de Karate-Do</p>
+                    <p>20 ani de experiență</p>
                 </div>
             </div>
 
@@ -362,7 +374,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="block">
                 <img src="src/images/tr-6.svg" alt="Șchivu Valeria — administrator">
                 <div class="overlay">
-                    <p class="name">Șchivu Valeria</p>
+                    <p class="name">Schivu Valeria</p>
                     <p>Administrator</p>
                 </div>
             </div>
@@ -419,7 +431,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="text">
             <h3>„Înainte nu aveam energie — acum zbor!”</h3>
             <span>Înainte de antrenamentul de la club mă simțeam leneș și obosit, chiar și după weekend. În doar câteva
-                săptămâniDupă ce am terminat cursurile, am observat cum mi-a crescut puterea și cum mi s-a îmbunătățit
+                săptămâni, după ce am terminat cursurile, am observat cum mi-a crescut puterea și cum mi s-a îmbunătățit
                 starea de spirit. Antrenorii sunt adevărați profesioniști, atmosfera se încarcă! Acum sportul este cel
                 mai bun obicei.</span>
             <p class="name">Ivan Ianaki</p>
@@ -443,6 +455,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <img src="src/images/arr-rt.svg" id="arrow-right-2">
         </div>
 
+        <a href="https://imgur.com/a/2Tp2ApE" target="_blank" class="grafic">Programul cursurilor de grup</a>
+
         <div class="container" id="slider-2">
             <!-- Abonamente -->
             <div class="block hot">
@@ -461,7 +475,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <ul>
                     <li>12 luni</li>
                     <li>Acces între 08:00 și 17:00</li>
-                    <li>Include pauză de până la 2 luni</li>
+                    <li>Include înghețare de până la 2 luni</li>
                 </ul>
 
                 <div class="price">
@@ -486,7 +500,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <ul>
                     <li>6 luni</li>
                     <li>Acces între 08:00 și 17:00</li>
-                    <li>Include pauză de 1 lună</li>
+                    <li>Include înghețare de 1 lună</li>
                 </ul>
 
                 <div class="price">
@@ -507,7 +521,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <ul>
                     <li>3 luni</li>
                     <li>Acces între 08:00 și 17:00</li>
-                    <li>Include pauză de 2 săptămâni</li>
+                    <li>Include înghețare de 2 săptămâni</li>
                 </ul>
 
                 <div class="price">
@@ -528,7 +542,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <ul>
                     <li>1 lună</li>
                     <li>Acces între 08:00 și 17:00</li>
-                    <li>Fără pauză</li>
+                    <li>Fără înghețare</li>
                 </ul>
 
                 <div class="price">
@@ -537,7 +551,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
             </div>
 
-            <!-- Nelimetat -->
             <!-- Abonamente nelimitate -->
             <div class="block">
                 <h5 class="first-h5">12 LUNI</h5>
@@ -550,6 +563,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <ul>
                     <li>12 luni</li>
+                    <li>Acces între 08:00 și 22:00</li>
                     <li>Include înghețare pentru 2 luni</li>
                 </ul>
 
@@ -570,6 +584,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <ul>
                     <li>6 luni</li>
+                    <li>Acces între 08:00 și 22:00</li>
                     <li>Include înghețare pentru 1 lună</li>
                 </ul>
 
@@ -590,6 +605,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <ul>
                     <li>3 luni</li>
+                    <li>Acces între 08:00 și 22:00</li>
                     <li>Include înghețare pentru 2 săptămâni</li>
                 </ul>
 
@@ -610,6 +626,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <ul>
                     <li>1 lună</li>
+                    <li>Acces între 08:00 și 22:00</li>
                     <li>Fără înghețare</li>
                 </ul>
 
@@ -867,8 +884,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <img src="src/images/nav-line.svg">
         </div>
 
-        <h2>Obtine o consultantă</h2>
-        <h2>gratuită!<b></b></h2>
+        <h2>Obține o consultanție</h2>
+        <h2><b>gratuită!</b></h2>
         <p>Fără spam. Te contactăm în 15 minute.</p>
 
         <div class="form">
@@ -961,7 +978,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="second-container">
             <span>© Global Fitness, All Rights Reverved, <a href="https://www.instagram.com/agency.omnify/">Designed &
                     Developed by Omnify Agency</a></span>
-            <a href="Regulile clubului Global Fitness.docx" download>Regulamentul intern al clubuluiе</a>
+            <a href="Regulile clubului Global Fitness.docx" download>Regulamentul intern al clubului</a>
         </div>
     </footer>
 

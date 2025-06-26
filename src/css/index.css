@@ -1,5 +1,6 @@
 /* Шрифты */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* Базовые стили */
 * {
@@ -317,13 +318,49 @@ header .side-block .bottom .burger .close-btn {
     margin-right: 0;
 }
 
-.benifits .container .top .block-1 img,
-.benifits .container .top .block-2 img,
-.benifits .container .top .block-3 img,
-.benifits .container .bottom .block-4 img,
-.benifits .container .bottom .block-5 img {
-    width: 50px;
-    height: 45px;
+.benifits .container .top .block-1 .img {
+    mask: url("../images/bench.svg") no-repeat center;
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    transition: 0.2s ease-in;
+}
+.benifits .container .top .block-2 .img {
+    mask: url("../images/blank.svg") no-repeat center;
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    transition: 0.2s ease-in;
+}
+.benifits .container .top .block-3 .img {
+    mask: url("../images/trainer.svg") no-repeat center;
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    transition: 0.2s ease-in;
+}
+.benifits .container .bottom .block-4 .img {
+    mask: url("../images/place.svg") no-repeat center;
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    transition: 0.2s ease-in;
+}
+.benifits .container .bottom .block-5 .img {
+    mask: url("../images/shower.svg") no-repeat center;
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    transition: 0.2s ease-in;
+}
+
+
+.benifits .container .top .block-1:hover .img,
+.benifits .container .top .block-2:hover .img,
+.benifits .container .top .block-3:hover .img,
+.benifits .container .bottom .block-4:hover .img,
+.benifits .container .bottom .block-5:hover .img {
+    background-color: #34B7FE;
 }
 
 .benifits .container .top .block-1 span,
@@ -337,9 +374,14 @@ header .side-block .bottom .burger .close-btn {
     color: white;
     font-size: 16px;
     font-weight: 300;
+    transition: 0.2s ease-in;
 }
 
-.benifits .container .top .block-1.active span {
+.benifits .container .top .block-1:hover span,
+.benifits .container .top .block-2:hover span,
+.benifits .container .top .block-3:hover span,
+.benifits .container .bottom .block-4:hover span,
+.benifits .container .bottom .block-5:hover span {
     color: #34B7FE;
 }
 
@@ -371,7 +413,7 @@ header .side-block .bottom .burger .close-btn {
 }
 
 .benifits .container .bottom .block-5 {
-    background-image: url("../images/ben-5.png");
+    background-image: url("../images/ben-5.svg");
 }
 
 /* Стили для блока "Как это работает" */
@@ -751,6 +793,11 @@ header .side-block .bottom .burger .close-btn {
     margin: 20px 0;
 }
 
+.prices .grafic {
+    color: gray;
+    text-decoration: underline;
+}
+
 .prices .arrows {
     float: right;
 }
@@ -950,7 +997,8 @@ header .side-block .bottom .burger .close-btn {
 
 .consultation h2 {
     font-size: 42px;
-    font-family: "Russo One", sans-serif;
+    font-family: "Barlow", sans-serif;
+    font-weight: bolder;
     color: white;
     text-align: center;
 }

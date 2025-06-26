@@ -1,12 +1,16 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+// Подключение автозагрузчика Composer
+require 'vendor/autoload.php';
+
 // Запуск сессии
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Экранирование от XSS
     $name = htmlspecialchars(trim($_POST["name"]));
     $phone = htmlspecialchars(trim($_POST["phone"]));
-
     $hasError = false;
 
     // Валидация имени
@@ -18,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hasError = true;
     }
 
-    // Валидация телефона
+    // Валидация телефона (9 цифр)
     if (empty($phone)) {
         $_SESSION["error-phone"] = "Это обязательное поле";
         $hasError = true;
@@ -28,31 +32,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (!$hasError) {
-        $to = "info@globalfitness.md";
-        $subject = "Запрос на консультацию с сайта Global Fitness";
-        $message = "
-                    <html>
-                    <head>
-                        <title>Заявка с сайта Global Fitness</title>
-                    </head>
-                    <body>
-                        <h2>Новая заявка на консультацию</h2>
-                        <p><strong>Имя:</strong> {$name}</p>
-                        <p><strong>Телефон:</strong> {$phone}</p>
-                    </body>
-                    </html>
-                    ";
-        $headers = "From: anatolganjea@gmail.com\r\n";
-        $headers .= "MIME-Version: 1.0\r\n";
-        $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+        $mail = new PHPMailer(true);
 
-        if (mail($to, $subject, $message, $headers)) {
-            $_SESSION["success"] = "Спасибо за заявку! Мы скоро с вами свяжемся";
-        } else {
-            $_SESSION["error-send"] = "Ошибка при отправке письма. Попробуйте позже";
+        try {
+            // Настройки сервера
+            $mail->isSMTP();
+            $mail->Host       = 'smtp.globalfitness.md'; // SMTP-сервер
+            $mail->SMTPAuth   = true;
+            $mail->Username   = 'globalfitnessmd@mail.ru'; // Почта
+            $mail->Password   = 'saladeforta201814';       // Пароль от почты
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port       = 587;
+
+            // От кого и кому
+            $mail->setFrom('noreply@globalfitness.md', 'Global Fitness');
+            $mail->addAddress('info@globalfitness.md');
+
+            // Контент письма
+            $mail->isHTML(true);
+            $mail->Subject = 'Запрос на консультацию с сайта Global Fitness';
+            $mail->Body    = "
+                <h2>Новая заявка на консультацию</h2>
+                <p><strong>Имя:</strong> {$name}</p>
+                <p><strong>Телефон:</strong> {$phone}</p>
+            ";
+            $mail->CharSet = 'UTF-8';
+
+            $mail->send();
+            $_SESSION["success"] = "Спасибо за заявку! Мы скоро с вами свяжемся.";
+        } catch (Exception $e) {
+            $_SESSION["error-send"] = "Ошибка при отправке письма: " . $mail->ErrorInfo;
         }
 
-        // Редирект для предотвращения повторной отправки
+        session_write_close(); // Завершение сессии перед редиректом
         header("Location: " . $_SERVER["REQUEST_URI"]);
         exit();
     }
@@ -192,7 +204,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="text">
             <h2>Стань лучшей версией</h2>
             <h2>себя с <b>Global Fitness!</b></h2>
-            <p>ССовременный фитнес-клуб в секторе Чеканы — с современным оборудованием и внимательным подходом!</p>
+            <p>Современный фитнес-клуб в секторе Чеканы — с современным оборудованием и внимательным подходом!</p>
             <a href="#form">Бесплатная консультация</a>
         </div>
     </div>
@@ -209,26 +221,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="container">
             <div class="top">
-                <div class="block-top block-1 active">
-                    <img src="src/images/bench.svg">
+                <div class="block-top block-1">
+                    <div class="img"></div>
                     <span>Тренажёрные залы нового поколения</span>
                 </div>
                 <div class="block-top block-2">
-                    <img src="src/images/blank.svg">
+                    <div class="img"></div>
                     <span>Персональные и групповые тренировки</span>
                 </div>
                 <div class="block-top block-3">
-                    <img src="src/images/trainer.svg">
+                    <div class="img"></div>
                     <span>Сертифицированные тренеры с опытом</span>
                 </div>
             </div>
             <div class="bottom">
                 <div class="block-bottom block-4">
-                    <img src="src/images/place.svg">
+
+                    <div class="img"></div>
                     <span>Удобное расположение и гибкий график</span>
                 </div>
                 <div class="block-bottom block-5">
-                    <img src="src/images/shower.svg">
+
+                    <div class="img"></div>
                     <span>Комфортные душевые и раздевалки</span>
                 </div>
             </div>
@@ -284,9 +298,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h2>НАШИ УСЛУГИ</h2>
 
         <div class="container">
-            <img src="src/images/ser-1.svg" alt="Индивидуальная тренировка с персональным тренером в клубе Global Fitness">
-            <img src="src/images/ser-2.svg" alt="Групповое занятие по йоге и пилатесу в фитнес клубе Global Fitness, Кишинёв">
-            <img src="src/images/ser-3svg.svg" alt="Тренировка по каратэ для детей 12-18 лет в клубе Global Fitness">
+            <img src="src/images/ser-1.svg"
+                alt="Индивидуальная тренировка с персональным тренером в клубе Global Fitness">
+            <img src="src/images/ser-2.svg"
+                alt="Групповое занятие по йоге и пилатесу в фитнес клубе Global Fitness, Кишинёв">
+            <img src="src/images/ser-3.svg" alt="Тренировка по каратэ для детей 12-18 лет в клубе Global Fitness">
             <img src="src/images/ser-4.svg" alt="Сауна для релаксации в фитнес клубе Global Fitness, Чеканы">
         </div>
     </div>
@@ -328,20 +344,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <div class="block">
-                <img src="src/images/tr-3.png" alt="Николае Кистругэ — тренер по Karate-Do с 20-летним опытом">
-                <div class="overlay">
-                    <p class="name">Николае Кистругэ</p>
-                    <p>Тренер по Karate-Do</p>
-                    <p>20 лет опыта</p>
-                </div>
-            </div>
-
-            <div class="block">
-                <img src="src/images/tr-4.png" alt="Максим Балан — персональный тренер с 10-летним опытом">
+                <img src="src/images/tr-3.png" alt="Максим Балан — персональный тренер с 10-летним опытом">
                 <div class="overlay">
                     <p class="name">Максим Балан</p>
                     <p>Персональный тренер</p>
                     <p>10 лет опыта</p>
+                </div>
+            </div>
+
+            <div class="block">
+                <img src="src/images/tr-4.png" alt="Николае Кистругэ — тренер по Karate-Do с 20-летним опытом">
+                <div class="overlay">
+                    <p class="name">Николае Кистругэ</p>
+                    <p>Тренер по Karate-Doр</p>
+                    <p>20 лет опыта</p>
                 </div>
             </div>
 
@@ -357,7 +373,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="block">
                 <img src="src/images/tr-6.svg" alt="Шиву Валерия — администратор">
                 <div class="overlay">
-                    <p class="name">Шиву Валерия</p>
+                    <p class="name">Скиву Валерия</p>
                     <p>Администратор</p>
                 </div>
             </div>
@@ -380,7 +396,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
         <h2>Загляни внутрь <b>Global Fitness</b></h2>
-        <p>Посмотри, где проходит твой путь к результату — просторные залы, современное оборудование и уют в каждой зоне.</p>
+        <p>Посмотри, где проходит твой путь к результату — просторные залы, современное оборудование и уют в каждой
+            зоне.</p>
 
         <div class="arrows">
             <img src="src/images/arr-lt.png" id="arrow-left-3">
@@ -391,7 +408,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="block slide active">
                 <img src="src/images/gal-2.png" alt="Современный тренажерный зал фитнес клуба Global Fitness в Кишинёве">
                 <img src="src/images/gal-1.png" alt="Чистая и просторная раздевалка фитнес клуба Global Fitness">
-                <img src="src/images/gal-3.png" alt="Сауна для релаксации в фитнес клубе Global Fitness, Чеканы">
+                <img src="src/images/gal-3 1.png" alt="Сауна для релаксации в фитнес клубе Global Fitness, Чеканы">
             </div>
 
             <div class="block slide">
@@ -435,6 +452,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <img src="src/images/arr-lt.png" id="arrow-left-2">
             <img src="src/images/arr-rt.png" id="arrow-right-2">
         </div>
+
+        <a href="https://imgur.com/a/2Tp2ApE" target="_blank" class="grafic">График групповых занятий</a>
 
         <div class="container" id="slider-2">
             <!-- Абонементы -->
@@ -529,7 +548,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <!-- Безлимитные абонементы -->
-             <div class="block">
+            <div class="block">
                 <h5 class="first-h5">12 МЕСЯЦЕВ</h5>
                 <h5>NO LIMIT</h5>
 
@@ -540,6 +559,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <ul>
                     <li>12 месяцев</li>
+                    <li>Вход с 08:00 до 22:00</li>
                     <li>Включает заморозку на 2 месяца</li>
                 </ul>
 
@@ -560,6 +580,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <ul>
                     <li>6 месяцев</li>
+                    <li>Вход с 08:00 до 22:00</li>
                     <li>Включает заморозку на 1 месяца</li>
                 </ul>
 
@@ -579,6 +600,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <ul>
                     <li>3 месяцев</li>
+                    <li>Вход с 08:00 до 22:00</li>
                     <li>Включает заморозку на 2 недели</li>
                 </ul>
 
@@ -598,6 +620,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <ul>
                     <li>1 месяц</li>
+                    <li>Вход с 08:00 до 22:00</li>
                     <li>Без заморозки</li>
                 </ul>
 
@@ -947,7 +970,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="line"></div>
 
         <div class="second-container">
-            <span>© Global Fitness, All Rights Reverved, <a href="https://www.instagram.com/agency.omnify/">Designed & Developed by Omnify Agency</a></span>
+            <span>© Global Fitness, All Rights Reverved, <a href="https://www.instagram.com/agency.omnify/">Designed &
+                    Developed by Omnify Agency</a></span>
             <a href="Regulile clubului Global Fitness.docx" download>Правила поведения в клубе</a>
         </div>
     </footer>
