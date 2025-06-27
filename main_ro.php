@@ -37,16 +37,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
             // Настройки сервера
             $mail->isSMTP();
-            $mail->Host       = 'smtp.globalfitness.md'; // SMTP-сервер
+            $mail->Host = 'smtp.mail.ru';  
             $mail->SMTPAuth   = true;
             $mail->Username   = 'globalfitnessmd@mail.ru'; // Почта
-            $mail->Password   = 'saladeforta201814';       // Пароль от почты
+            $mail->Password   = 'ImuyBBEIdVehWQsS8OYT';       // Пароль от почты
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port       = 587;
 
             // От кого и кому
-            $mail->setFrom('noreply@globalfitness.md', 'Global Fitness');
-            $mail->addAddress('info@globalfitness.md');
+            $mail->setFrom('globalfitnessmd@mail.ru', 'Global Fitness');
+            $mail->addAddress('globalfitnessmd@mail.ru');
 
             // Контент письма
             $mail->isHTML(true);
@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->CharSet = 'UTF-8';
 
             $mail->send();
-            $_SESSION["success"] = "Спасибо за заявку! Мы скоро с вами свяжемся.";
+            $_SESSION["success"] = "Vă mulțumim pentru solicitarea dumneavoastră! Vă vom contacta în curând.";
         } catch (Exception $e) {
             $_SESSION["error-send"] = "Ошибка при отправке письма: " . $mail->ErrorInfo;
         }
